@@ -1,22 +1,36 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { useLanguage } from '@/context/LanguageContext';
+import { getTranslation } from '@/constants/translations';
 
 interface DemoButtonProps {
   className?: string;
   fullWidth?: boolean;
+  text?: string;
 }
 
-const DemoButton: React.FC<DemoButtonProps> = ({ className = '', fullWidth = false }) => {
+const DemoButton: React.FC<DemoButtonProps> = ({ 
+  className, 
+  fullWidth = false,
+  text
+}) => {
+  const { language } = useLanguage();
+  const buttonText = text || getTranslation('header.demo', language);
+
   return (
-    <Button 
-      className={`bg-primary-light hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-base ${fullWidth ? 'w-full' : ''} ${className}`}
-      onClick={() => window.open('https://calendly.com/pickaform/pickaform-live-demo', '_blank')}
+    <a
+      href="#"
+      className={cn(
+        "bg-primary-light hover:bg-primary-dark text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center gap-2 px-6 py-3",
+        fullWidth ? "w-full" : "inline-flex",
+        className
+      )}
     >
-      Bookez une démo
-      <ArrowRight className="ml-2 w-4 h-4" />
-    </Button>
+      {buttonText}
+      <ArrowRight size={18} />
+    </a>
   );
 };
 

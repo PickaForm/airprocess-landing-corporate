@@ -1,8 +1,12 @@
 
 import React from 'react';
 import DemoButton from './DemoButton';
+import { useLanguage } from '@/context/LanguageContext';
+import { getTranslation } from '@/constants/translations';
 
 const Hero: React.FC = () => {
+  const { language } = useLanguage();
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-primary via-primary to-blue-900 text-white overflow-hidden">
       {/* Cercles décoratifs */}
@@ -12,13 +16,13 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-            Pickaform : le no-code conçu pour les grands comptes
+            {getTranslation('hero.title', language)}
           </h1>
           <p className="text-lg md:text-xl mb-10 text-gray-200 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            25 ans d'expertise en optimisation des process métiers condensée en un outil puissant et intuitif. Automatisez, systématisez et optimisez la gestion de vos processus.
+            {getTranslation('hero.subtitle', language)}
           </p>
           <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <DemoButton className="text-lg px-8 py-4" />
+            <DemoButton className="text-lg px-8 py-4" text={getTranslation('header.demo', language)} />
           </div>
         </div>
       </div>

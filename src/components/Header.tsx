@@ -2,11 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import DemoButton from './DemoButton';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '@/context/LanguageContext';
+import { getTranslation } from '@/constants/translations';
 import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,36 +40,40 @@ const Header: React.FC = () => {
         {/* Menu pour Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#challenges" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            Challenges
+            {getTranslation('header.challenges', language)}
           </a>
           <a href="#ai-features" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            IA Intégrée
+            {getTranslation('header.aiFeatures', language)}
           </a>
           <a href="#integration" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            Intégrations
+            {getTranslation('header.integration', language)}
           </a>
           <a href="#pricing" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            Nos offres
+            {getTranslation('header.pricing', language)}
           </a>
           <a href="#makers" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            Makers
+            {getTranslation('header.makers', language)}
           </a>
           <a href="#security" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            Sécurité
+            {getTranslation('header.security', language)}
           </a>
           <a href="#testimonials" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
-            Témoignages
+            {getTranslation('header.testimonials', language)}
           </a>
-          <DemoButton />
+          <LanguageSelector />
+          <DemoButton text={getTranslation('header.demo', language)} />
         </nav>
 
         {/* Bouton burger pour mobile */}
-        <button 
-          className="md:hidden text-primary"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center space-x-4">
+          <LanguageSelector />
+          <button 
+            className="text-primary"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Menu mobile */}
@@ -77,51 +85,51 @@ const Header: React.FC = () => {
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Challenges
+              {getTranslation('header.challenges', language)}
             </a>
             <a 
               href="#ai-features" 
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              IA Intégrée
+              {getTranslation('header.aiFeatures', language)}
             </a>
             <a 
               href="#integration" 
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Intégrations
+              {getTranslation('header.integration', language)}
             </a>
             <a 
               href="#pricing" 
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Nos offres
+              {getTranslation('header.pricing', language)}
             </a>
             <a 
               href="#makers" 
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Makers
+              {getTranslation('header.makers', language)}
             </a>
             <a 
               href="#security" 
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Sécurité
+              {getTranslation('header.security', language)}
             </a>
             <a 
               href="#testimonials" 
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Témoignages
+              {getTranslation('header.testimonials', language)}
             </a>
-            <DemoButton fullWidth />
+            <DemoButton text={getTranslation('header.demo', language)} fullWidth />
           </div>
         </div>
       )}
