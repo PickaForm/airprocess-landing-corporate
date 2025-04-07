@@ -39,25 +39,25 @@ const Header: React.FC = () => {
 
         {/* Menu pour Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#challenges" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#challenges" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.challenges', language)}
           </a>
-          <a href="#ai-features" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#ai-features" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.aiFeatures', language)}
           </a>
-          <a href="#integration" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#integration" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.integration', language)}
           </a>
-          <a href="#pricing" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#pricing" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.pricing', language)}
           </a>
-          <a href="#makers" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#makers" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.makers', language)}
           </a>
-          <a href="#security" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#security" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.security', language)}
           </a>
-          <a href="#testimonials" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+          <a href="#testimonials" className="text-gray-100 hover:text-white font-medium transition-colors">
             {getTranslation('header.testimonials', language)}
           </a>
           <LanguageSelector />
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
         <div className="md:hidden flex items-center space-x-4">
           <LanguageSelector />
           <button 
-            className="text-primary"
+            className="text-white hover:text-gray-200 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

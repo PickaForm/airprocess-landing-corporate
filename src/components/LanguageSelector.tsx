@@ -14,8 +14,8 @@ const LanguageSelector: React.FC = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium">
-        <Globe size={16} />
+      <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-white hover:text-gray-200 transition-colors">
+        <Globe size={16} className="text-white" />
         <span className="hidden md:block">{language === 'fr' ? 'Français' : 'English'}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-white">
