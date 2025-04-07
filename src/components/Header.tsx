@@ -44,6 +44,12 @@ const Header: React.FC = () => {
           <a href="#integration" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
             Intégrations
           </a>
+          <a href="#pricing" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+            Nos offres
+          </a>
+          <a href="#makers" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
+            Makers
+          </a>
           <a href="#security" className="text-gray-700 hover:text-primary-light font-medium transition-colors">
             Sécurité
           </a>
@@ -86,6 +92,20 @@ const Header: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Intégrations
+            </a>
+            <a 
+              href="#pricing" 
+              className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Nos offres
+            </a>
+            <a 
+              href="#makers" 
+              className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Makers
             </a>
             <a 
               href="#security" 

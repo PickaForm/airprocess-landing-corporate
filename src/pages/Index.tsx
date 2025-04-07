@@ -7,6 +7,8 @@ import AIFeatures from '@/components/AIFeatures';
 import Integration from '@/components/Integration';
 import Security from '@/components/Security';
 import Testimonials from '@/components/Testimonials';
+import PricingPlans from '@/components/PricingPlans';
+import MakersSection from '@/components/MakersSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -19,6 +21,8 @@ const Index = () => {
         <AIFeatures />
         <Integration />
         <Security />
+        <PricingPlans />
+        <MakersSection />
         <Testimonials />
       </main>
       <Footer />
