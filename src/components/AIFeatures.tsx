@@ -107,9 +107,6 @@ const AIFeatures: React.FC = () => {
               <p className="mb-4">
                 Ne restez pas bloqué ! Notre assistant IA répond à toutes vos questions et vous guide étape par étape pour exploiter pleinement notre outil.
               </p>
-              <a href="#" className="inline-flex items-center text-primary-light font-medium hover:underline">
-                En savoir plus <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>
