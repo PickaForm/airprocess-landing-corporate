@@ -4,7 +4,7 @@ import DemoButton from './DemoButton';
 
 const securityFeatures = [
   {
-    title: "Solution On-Premise",
+    title: "Solution On-Premise pour les grands comptes",
     description: "Tout reste sous contrôle. La sécurité et la gouvernance des données sont garanties."
   },
   {
