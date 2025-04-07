@@ -2,8 +2,13 @@
 import React from 'react';
 import DemoButton from './DemoButton';
 import { Linkedin, Youtube } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import { getTranslation } from '@/constants/translations';
 
 const Footer: React.FC = () => {
+  const { language } = useLanguage();
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-primary text-white">
       <div className="container mx-auto py-16 px-6">
@@ -11,7 +16,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <h3 className="text-2xl font-bold mb-4">Pickaform</h3>
             <p className="text-gray-300 mb-6">
-              Le no-code conçu pour les grands comptes. Automatisez vos processus métier avec une solution puissante et intuitive.
+              {getTranslation('footer.description', language)}
             </p>
             <div className="space-x-4">
               <a href="https://www.linkedin.com/company/pickaform-cloud/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
@@ -26,29 +31,29 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4">Solutions</h4>
+            <h4 className="text-lg font-semibold mb-4">{getTranslation('footer.solutions', language)}</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pour les grands comptes</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pour les PME</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pour les DSI</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pour les métiers</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.forEnterprise', language)}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.forSMB', language)}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.forIT', language)}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.forBusiness', language)}</a></li>
             </ul>
           </div>
           
           <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4">Ressources</h4>
+            <h4 className="text-lg font-semibold mb-4">{getTranslation('footer.resources', language)}</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Cas clients</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Assistance</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.documentation', language)}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.blog', language)}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.caseStudies', language)}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{getTranslation('footer.support', language)}</a></li>
             </ul>
           </div>
           
           <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4">Contactez-nous</h4>
+            <h4 className="text-lg font-semibold mb-4">{getTranslation('footer.contact', language)}</h4>
             <p className="text-gray-300 mb-6">
-              Vous souhaitez en savoir plus sur Pickaform ? N'hésitez pas à prendre contact avec notre équipe.
+              {getTranslation('footer.contactText', language)}
             </p>
             <DemoButton className="w-full justify-center" />
           </div>
@@ -56,12 +61,12 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Pickaform. Tous droits réservés.
+            &copy; {currentYear} Pickaform. {getTranslation('footer.copyright', language)}
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Mentions légales</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Politique de confidentialité</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">CGU</a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.legal', language)}</a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.privacy', language)}</a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.terms', language)}</a>
           </div>
         </div>
       </div>
