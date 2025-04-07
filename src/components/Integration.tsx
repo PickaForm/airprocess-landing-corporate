@@ -28,7 +28,7 @@ const Integration: React.FC = () => {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-4 text-primary">Connectez vos outils préférés</h3>
                 <p className="text-gray-700 mb-6">
-                  Grâce à l'intégration avec Make, Pickaform peut communiquer avec plus de 1000 applications et services. Automatisez des flux de travail complexes sans écrire une seule ligne de code.
+                  Grâce à l'intégration avec Make, Pickaform peut communiquer avec plus de 2000 applications et services. Automatisez des flux de travail complexes sans écrire une seule ligne de code.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -49,7 +49,9 @@ const Integration: React.FC = () => {
 
             <div className="text-center">
               <a 
-                href="#" 
+                href="https://www.make.com/en/integrations?community=1&verified=1" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-primary-light hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300"
               >
                 Découvrir les intégrations possibles
