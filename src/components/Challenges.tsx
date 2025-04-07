@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check, File, Link, Circle, Users } from 'lucide-react';
+import DemoButton from './DemoButton';
 
 const challenges = [
   {
