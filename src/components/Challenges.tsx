@@ -47,7 +47,7 @@ const solutions = [
 
 const Challenges: React.FC = () => {
   return (
-    <section id="challenges" className="section bg-gray-50">
+    <section className="section bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="section-title">Le défi des grandes entreprises</h2>

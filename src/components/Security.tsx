@@ -23,7 +23,7 @@ const securityFeatures = [
 
 const Security: React.FC = () => {
   return (
-    <section id="security" className="section bg-primary text-white">
+    <section className="section bg-primary text-white">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

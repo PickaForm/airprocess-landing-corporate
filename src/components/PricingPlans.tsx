@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Users, Cloud, Database } from 'lucide-react';
@@ -46,7 +45,7 @@ const cloudPlans = [
 
 const PricingPlans: React.FC = () => {
   return (
-    <section id="pricing" className="section">
+    <section className="section">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="section-title">Nos offres</h2>

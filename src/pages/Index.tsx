@@ -10,6 +10,7 @@ import Testimonials from '@/components/Testimonials';
 import PricingPlans from '@/components/PricingPlans';
 import MakersSection from '@/components/MakersSection';
 import Footer from '@/components/Footer';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Index = () => {
   return (
@@ -17,13 +18,27 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Challenges />
-        <AIFeatures />
-        <Integration />
-        <Security />
-        <PricingPlans />
-        <MakersSection />
-        <Testimonials />
+        <AnimatedSection id="challenges">
+          <Challenges />
+        </AnimatedSection>
+        <AnimatedSection id="ai-features" delay={100}>
+          <AIFeatures />
+        </AnimatedSection>
+        <AnimatedSection id="integration" delay={200}>
+          <Integration />
+        </AnimatedSection>
+        <AnimatedSection id="security" delay={300}>
+          <Security />
+        </AnimatedSection>
+        <AnimatedSection id="pricing" delay={400}>
+          <PricingPlans />
+        </AnimatedSection>
+        <AnimatedSection id="makers" delay={500}>
+          <MakersSection />
+        </AnimatedSection>
+        <AnimatedSection id="testimonials" delay={600}>
+          <Testimonials />
+        </AnimatedSection>
       </main>
       <Footer />
     </div>

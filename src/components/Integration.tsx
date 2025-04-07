@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 
 const Integration: React.FC = () => {
   return (
-    <section id="integration" className="section bg-gradient-to-br from-blue-50 to-white">
+    <section className="section bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">

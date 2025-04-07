@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 // Données fictives de témoignages clients
@@ -28,7 +27,7 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="section bg-gray-50">
+    <section className="section bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="section-title">Témoignages clients</h2>

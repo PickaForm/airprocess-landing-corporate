@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Briefcase, TrendingUp, Handshake, Rocket } from 'lucide-react';
 import DemoButton from './DemoButton';
@@ -28,7 +27,7 @@ const makersBenefits = [
 
 const MakersSection: React.FC = () => {
   return (
-    <section id="makers" className="section bg-gray-50">
+    <section className="section bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="section-title">Offre makers / No-coders</h2>
