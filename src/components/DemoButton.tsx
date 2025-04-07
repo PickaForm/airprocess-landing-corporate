@@ -12,6 +12,7 @@ const DemoButton: React.FC<DemoButtonProps> = ({ className = '', fullWidth = fal
   return (
     <Button 
       className={`bg-primary-light hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 text-base ${fullWidth ? 'w-full' : ''} ${className}`}
+      onClick={() => window.open('https://calendly.com/pickaform/pickaform-live-demo', '_blank')}
     >
       Bookez une démo
       <ArrowRight className="ml-2 w-4 h-4" />
