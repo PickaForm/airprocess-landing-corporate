@@ -10,6 +10,7 @@ import Security from '@/components/Security';
 import Testimonials from '@/components/Testimonials';
 import PricingPlans from '@/components/PricingPlans';
 import MakersSection from '@/components/MakersSection';
+import TrustedBy from '@/components/TrustedBy';
 import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/AnimatedSection';
 
@@ -40,6 +41,9 @@ const Index = () => {
         </AnimatedSection>
         <AnimatedSection id="testimonials" delay={600}>
           <Testimonials />
+        </AnimatedSection>
+        <AnimatedSection id="trusted-by" delay={700}>
+          <TrustedBy />
         </AnimatedSection>
       </main>
       <Footer />

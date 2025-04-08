@@ -1,4 +1,3 @@
-
 type TranslationKey = 
   | 'header.challenges'
   | 'header.aiFeatures'
@@ -133,6 +132,9 @@ type TranslationKey =
   | 'testimonials.user3.name'
   | 'testimonials.user3.position'
   | 'testimonials.user3.company'
+  
+  | 'trustedBy.title'
+  | 'trustedBy.imageAlt'
   
   | 'footer.description'
   | 'footer.solutions'
@@ -660,6 +662,15 @@ export const translations: {
   'testimonials.user3.company': {
     fr: 'ConseilCorp',
     en: 'ConseilCorp'
+  },
+  
+  'trustedBy.title': {
+    fr: 'Ils nous ont fait confiance',
+    en: 'They Trust Us'
+  },
+  'trustedBy.imageAlt': {
+    fr: 'Logos de nos clients',
+    en: 'Our client logos'
   },
   
   'footer.description': {
