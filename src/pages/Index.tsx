@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import ImageCarousel from '@/components/ImageCarousel';
 import Challenges from '@/components/Challenges';
 import AIFeatures from '@/components/AIFeatures';
 import Integration from '@/components/Integration';
@@ -18,6 +19,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <ImageCarousel />
         <AnimatedSection id="challenges">
           <Challenges />
         </AnimatedSection>
