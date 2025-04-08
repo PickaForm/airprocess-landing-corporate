@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import DemoButton from './DemoButton';
 import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '@/context/LanguageContext';
 import { getTranslation } from '@/constants/translations';
@@ -82,7 +81,6 @@ const Header: React.FC = () => {
             {getTranslation('header.testimonials', language)}
           </a>
           <LanguageSelector isScrolled={isScrolled} />
-          <DemoButton text={getTranslation('header.demo', language)} />
         </nav>
 
         {/* Bouton burger pour mobile */}
@@ -153,7 +151,6 @@ const Header: React.FC = () => {
             >
               {getTranslation('header.testimonials', language)}
             </a>
-            <DemoButton text={getTranslation('header.demo', language)} fullWidth />
           </div>
         </div>
       )}
