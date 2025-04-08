@@ -1,3 +1,4 @@
+
 export const translations: Record<string, Record<string, string>> = {
   en: {
     'header.challenges': 'Challenges',
@@ -54,9 +55,9 @@ export const translations: Record<string, Record<string, string>> = {
     'makers.feature3': 'Real-Time Collaboration',
     'testimonials.title': 'What Our Users Say',
     'testimonials.subtitle': 'Read stories from our satisfied customers who have transformed their businesses with our AI solutions.',
-    'testimonials.quote1': '“Our AI platform has revolutionized our workflow, saving us time and resources.”',
+    'testimonials.quote1': '"Our AI platform has revolutionized our workflow, saving us time and resources."',
     'testimonials.author1': 'John Doe, CEO',
-    'testimonials.quote2': '“The AI-powered insights have helped us make data-driven decisions and improve our bottom line.”',
+    'testimonials.quote2': '"The AI-powered insights have helped us make data-driven decisions and improve our bottom line."',
     'testimonials.author2': 'Jane Smith, Marketing Manager',
     'footer.copyright': '© 2024 Pickaform. All rights reserved.',
     'languageSelector.english': 'English',
@@ -123,9 +124,9 @@ export const translations: Record<string, Record<string, string>> = {
     'makers.feature3': 'Collaboration en Temps Réel',
     'testimonials.title': 'Ce Que Disent Nos Utilisateurs',
     'testimonials.subtitle': 'Lisez les témoignages de nos clients satisfaits qui ont transformé leur entreprise grâce à nos solutions d\'IA.',
-    'testimonials.quote1': '“Notre plateforme d\'IA a révolutionné notre flux de travail, nous faisant gagner du temps et des ressources.”',
+    'testimonials.quote1': '"Notre plateforme d\'IA a révolutionné notre flux de travail, nous faisant gagner du temps et des ressources."',
     'testimonials.author1': 'John Doe, PDG',
-    'testimonials.quote2': '“Les informations basées sur l\'IA nous ont aidés à prendre des décisions fondées sur les données et à améliorer nos résultats.”',
+    'testimonials.quote2': '"Les informations basées sur l\'IA nous ont aidés à prendre des décisions fondées sur les données et à améliorer nos résultats."',
     'footer.copyright': '© 2024 Pickaform. Tous droits réservés.',
     'languageSelector.english': 'Anglais',
     'languageSelector.french': 'Français',
@@ -136,4 +137,18 @@ export const translations: Record<string, Record<string, string>> = {
     'screenshots.image2.title': 'Tableau de bord de gestion de projet',
     'screenshots.image2.description': 'Surveillez vos projets avec des outils d\'analyse et de reporting complets',
   },
+};
+
+/**
+ * Function to get a translation string from the translations object
+ * @param key The translation key
+ * @param language The language code ('en' or 'fr')
+ * @returns The translated string or the key itself if not found
+ */
+export const getTranslation = (key: string, language: string): string => {
+  // Default to English if the language doesn't exist
+  const languageStrings = translations[language] || translations['en'];
+  
+  // Return the translation or the key itself if not found
+  return languageStrings[key] || key;
 };
