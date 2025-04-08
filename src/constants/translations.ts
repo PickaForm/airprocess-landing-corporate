@@ -1,737 +1,193 @@
-
-type TranslationKey = 
-  | 'header.challenges'
-  | 'header.aiFeatures'
-  | 'header.integration'
-  | 'header.pricing'
-  | 'header.makers'
-  | 'header.security'
-  | 'header.testimonials'
-  | 'header.demo'
-  
-  | 'hero.title'
-  | 'hero.subtitle'
-  
-  | 'aiFeatures.title'
-  | 'aiFeatures.subtitle'
-  | 'aiFeatures.generateApps.title'
-  | 'aiFeatures.generateApps.subtitle'
-  | 'aiFeatures.generateApps.step1.title'
-  | 'aiFeatures.generateApps.step1.description'
-  | 'aiFeatures.generateApps.step2.title'
-  | 'aiFeatures.generateApps.step2.description'
-  | 'aiFeatures.generateApps.step3.title'
-  | 'aiFeatures.generateApps.step3.description'
-  | 'aiFeatures.generateApps.step4.title'
-  | 'aiFeatures.generateApps.step4.description'
-  | 'aiFeatures.generateApps.conclusion'
-  
-  | 'aiFeatures.intelligence.title'
-  | 'aiFeatures.intelligence.subtitle'
-  | 'aiFeatures.intelligence.summaries'
-  | 'aiFeatures.intelligence.briefs'
-  | 'aiFeatures.intelligence.reports'
-  | 'aiFeatures.intelligence.textAnalysis'
-  | 'aiFeatures.intelligence.emails'
-  | 'aiFeatures.intelligence.visuals'
-  | 'aiFeatures.intelligence.possibilities'
-  
-  | 'aiFeatures.question.title'
-  | 'aiFeatures.question.description'
-  
-  | 'challenges.title'
-  | 'challenges.subtitle'
-  | 'challenges.dispersed.title'
-  | 'challenges.dispersed.description'
-  | 'challenges.lost.title'
-  | 'challenges.lost.description'
-  | 'challenges.lostInfo.title'
-  | 'challenges.lostInfo.description'
-  | 'challenges.inefficient.title'
-  | 'challenges.inefficient.description'
-  | 'challenges.solutionsTitle'
-  | 'challenges.solutionsSubtitle'
-  | 'challenges.solution1.title'
-  | 'challenges.solution1.description'
-  | 'challenges.solution2.title'
-  | 'challenges.solution2.description'
-  | 'challenges.solution3.title'
-  | 'challenges.solution3.description'
-  | 'challenges.solution4.title'
-  | 'challenges.solution4.description'
-  | 'challenges.conclusion'
-  | 'challenges.callToAction'
-  
-  | 'integration.title'
-  | 'integration.subtitle'
-  | 'integration.connect.title'
-  | 'integration.connect.subtitle'
-  | 'integration.feature1'
-  | 'integration.feature2'
-  | 'integration.feature3'
-  | 'integration.buttonText'
-  
-  | 'security.title'
-  | 'security.subtitle'
-  | 'security.feature1.title'
-  | 'security.feature1.description'
-  | 'security.feature2.title'
-  | 'security.feature2.description'
-  | 'security.feature3.title'
-  | 'security.feature3.description'
-  | 'security.feature4.title'
-  | 'security.feature4.description'
-  | 'security.conclusion'
-  | 'security.callToAction'
-  
-  | 'pricing.title'
-  | 'pricing.cloud.title'
-  | 'pricing.silver.title'
-  | 'pricing.gold.title'
-  | 'pricing.platinum.title'
-  | 'pricing.silver.price'
-  | 'pricing.gold.price'
-  | 'pricing.platinum.price'
-  | 'pricing.perUser'
-  | 'pricing.feature1'
-  | 'pricing.feature2'
-  | 'pricing.feature3'
-  | 'pricing.feature4'
-  | 'pricing.feature5'
-  | 'pricing.onpremise.title'
-  | 'pricing.onpremise.subtitle'
-  | 'pricing.onpremise.feature1'
-  | 'pricing.onpremise.feature2'
-  | 'pricing.onpremise.feature3'
-  | 'pricing.onpremise.feature4'
-  
-  | 'makers.title'
-  | 'makers.subtitle'
-  | 'makers.benefit1.title'
-  | 'makers.benefit1.description'
-  | 'makers.benefit2.title'
-  | 'makers.benefit2.description'
-  | 'makers.benefit3.title'
-  | 'makers.benefit3.description'
-  | 'makers.benefit4.title'
-  | 'makers.benefit4.description'
-  | 'makers.conclusion'
-  | 'makers.callToAction'
-  | 'makers.callToActionButton'
-  
-  | 'testimonials.title'
-  | 'testimonials.subtitle'
-  | 'testimonials.user1.text'
-  | 'testimonials.user1.name'
-  | 'testimonials.user1.position'
-  | 'testimonials.user1.company'
-  | 'testimonials.user2.text'
-  | 'testimonials.user2.name'
-  | 'testimonials.user2.position'
-  | 'testimonials.user2.company'
-  | 'testimonials.user3.text'
-  | 'testimonials.user3.name'
-  | 'testimonials.user3.position'
-  | 'testimonials.user3.company'
-  
-  | 'footer.description'
-  | 'footer.solutions'
-  | 'footer.forEnterprise'
-  | 'footer.forSMB'
-  | 'footer.forIT'
-  | 'footer.forBusiness'
-  | 'footer.resources'
-  | 'footer.documentation'
-  | 'footer.blog'
-  | 'footer.caseStudies'
-  | 'footer.support'
-  | 'footer.contact'
-  | 'footer.contactText'
-  | 'footer.copyright'
-  | 'footer.legal'
-  | 'footer.privacy'
-  | 'footer.terms';
-
-export const translations: {
-  [key in TranslationKey]: {
-    fr: string;
-    en: string;
-  };
-} = {
-  'header.challenges': {
-    fr: 'Challenges',
-    en: 'Challenges'
+export const translations = {
+  en: {
+    'header.home': 'Home',
+    'header.challenges': 'Challenges',
+    'header.aiFeatures': 'AI Features',
+    'header.integration': 'Integration',
+    'header.security': 'Security',
+    'header.pricing': 'Pricing',
+    'header.makers': 'Makers',
+    'header.testimonials': 'Testimonials',
+    'header.contact': 'Contact',
+    'hero.title': 'The #1 AI platform for process automation',
+    'hero.subtitle': 'Automate, integrate, and scale your business with the most intuitive AI-powered platform.',
+    'hero.button': 'Start your free trial',
+    'challenges.title': 'Challenges We Solve',
+    'challenges.subtitle': 'We help businesses overcome key operational challenges by providing an AI-powered platform that automates processes, enhances security, and improves decision-making.',
+    'challenges.challenge1.title': 'Inefficient Workflows',
+    'challenges.challenge1.description': 'Manual and repetitive tasks slow down productivity and increase operational costs.',
+    'challenges.challenge2.title': 'Data Security Risks',
+    'challenges.challenge2.description': 'Protecting sensitive data from breaches and ensuring compliance with regulations.',
+    'challenges.challenge3.title': 'Siloed Systems',
+    'challenges.challenge3.description': 'Lack of integration between different software tools leads to data fragmentation and communication issues.',
+    'challenges.challenge4.title': 'Scalability Limitations',
+    'challenges.challenge4.description': 'Inability to quickly adapt to changing business needs and handle increased workloads.',
+    'aiFeatures.title': 'AI-Powered Features',
+    'aiFeatures.subtitle': 'Our platform leverages the latest advancements in artificial intelligence to provide powerful tools that automate tasks, improve accuracy, and drive better business outcomes.',
+    'aiFeatures.feature1.title': 'Intelligent Automation',
+    'aiFeatures.feature1.description': 'Automate repetitive tasks and workflows with AI-driven decision-making.',
+    'aiFeatures.feature2.title': 'Predictive Analytics',
+    'aiFeatures.feature2.description': 'Gain insights into future trends and make data-driven decisions with predictive analytics.',
+    'aiFeatures.feature3.title': 'Enhanced Security',
+    'aiFeatures.feature3.description': 'Protect your data with advanced AI-powered security measures and threat detection.',
+    'aiFeatures.feature4.title': 'Personalized Experiences',
+    'aiFeatures.feature4.description': 'Create personalized experiences for your customers with AI-driven recommendations and content delivery.',
+    'integration.title': 'Seamless Integration',
+    'integration.subtitle': 'Connect Pickaform with your existing tools and systems to create a unified and efficient workflow.',
+    'integration.platform1': 'Salesforce',
+    'integration.platform2': 'Slack',
+    'integration.platform3': 'Google Workspace',
+    'integration.platform4': 'Microsoft Office 365',
+    'security.title': 'Enterprise-Grade Security',
+    'security.subtitle': 'We are committed to providing the highest level of security to protect your data and ensure compliance with industry regulations.',
+    'security.compliance1': 'GDPR',
+    'security.compliance2': 'HIPAA',
+    'security.compliance3': 'SOC 2',
+    'security.compliance4': 'ISO 27001',
+    'testimonials.title': 'What Our Users Say',
+    'testimonials.subtitle': 'Read how Pickaform has helped businesses like yours transform their operations and achieve remarkable results.',
+    'testimonials.quote1': 'Pickaform has revolutionized our workflow. The AI-powered automation has saved us countless hours and improved our accuracy.',
+    'testimonials.author1': 'John Smith, CEO of Acme Corp',
+    'testimonials.quote2': 'The security features are top-notch. We can rest easy knowing our data is safe and compliant with regulations.',
+    'testimonials.author2': 'Alice Johnson, CTO of Beta Inc',
+    'pricing.title': 'Flexible Pricing Plans',
+    'pricing.subtitle': 'Choose the plan that best fits your needs and budget. Start with a free trial and upgrade as you grow.',
+    'pricing.plan1.title': 'Basic',
+    'pricing.plan1.price': 'Free',
+    'pricing.plan1.description': 'For individuals and small teams getting started with process automation.',
+    'pricing.plan1.features': ['5 Users', 'Basic Automation', 'Limited Storage'],
+    'pricing.plan2.title': 'Standard',
+    'pricing.plan2.price': '$49/month',
+    'pricing.plan2.description': 'For growing businesses that need more advanced features and support.',
+    'pricing.plan2.features': ['25 Users', 'Advanced Automation', 'Priority Support', '100GB Storage'],
+    'pricing.plan3.title': 'Enterprise',
+    'pricing.plan3.price': 'Custom Pricing',
+    'pricing.plan3.description': 'For large organizations that require custom solutions and dedicated support.',
+    'pricing.plan3.features': ['Unlimited Users', 'Custom Integrations', 'Dedicated Support', 'Unlimited Storage'],
+    'makers.title': 'Made with ❤️ for Makers',
+    'makers.subtitle': 'Empowering makers and innovators with the tools they need to bring their ideas to life.',
+    'makers.description': 'Pickaform is designed to be intuitive and easy to use, so you can focus on creating and innovating. Whether you\'re building a new product, automating a workflow, or streamlining your business processes, Pickaform has you covered.',
+    'footer.description': 'Automate, integrate, and scale your business with the most intuitive AI-powered platform.',
+    'footer.solutions': 'Solutions',
+    'footer.forEnterprise': 'For Enterprise',
+    'footer.forSMB': 'For SMB',
+    'footer.forIT': 'For IT Professionals',
+    'footer.forBusiness': 'For Business Owners',
+    'footer.resources': 'Resources',
+    'footer.documentation': 'Documentation',
+    'footer.blog': 'Blog',
+    'footer.caseStudies': 'Case Studies',
+    'footer.support': 'Support',
+    'footer.contact': 'Contact Us',
+    'footer.contactText': 'Have questions? Contact us to learn more about how Pickaform can help your business.',
+    'footer.copyright': 'All rights reserved.',
+    'footer.legal': 'Legal',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
+    'demoButton': 'Request a Demo',
+    'screenshots.title': 'Product Screenshots',
+    'screenshots.description': 'Discover Pickaform\'s intuitive interface that helps you manage your business processes with ease.',
+    'screenshots.applicant': 'Applicant Tracking System',
+    'screenshots.applicantDesc': 'Manage your recruitment workflow with our visual process designer. From application to hiring decision.',
+    'screenshots.projects': 'Projects and Tasks Management',
+    'screenshots.projectsDesc': 'Track project progress, analyze workload distribution and visualize your team\'s performance.',
+  },
+  fr: {
+    'header.home': 'Accueil',
+    'header.challenges': 'Défis',
+    'header.aiFeatures': 'Fonctionnalités IA',
+    'header.integration': 'Intégration',
+    'header.security': 'Sécurité',
+    'header.pricing': 'Tarification',
+    'header.makers': 'Créateurs',
+    'header.testimonials': 'Témoignages',
+    'header.contact': 'Contact',
+    'hero.title': 'La plateforme d\'IA n°1 pour l\'automatisation des processus',
+    'hero.subtitle': 'Automatisez, intégrez et développez votre entreprise avec la plateforme la plus intuitive basée sur l\'IA.',
+    'hero.button': 'Commencez votre essai gratuit',
+    'challenges.title': 'Défis que nous résolvons',
+    'challenges.subtitle': 'Nous aidons les entreprises à surmonter les principaux défis opérationnels en fournissant une plateforme basée sur l\'IA qui automatise les processus, améliore la sécurité et améliore la prise de décision.',
+    'challenges.challenge1.title': 'Flux de travail inefficaces',
+    'challenges.challenge1.description': 'Les tâches manuelles et répétitives ralentissent la productivité et augmentent les coûts opérationnels.',
+    'challenges.challenge2.title': 'Risques de sécurité des données',
+    'challenges.challenge2.description': 'Protéger les données sensibles contre les violations et assurer la conformité aux réglementations.',
+    'challenges.challenge3.title': 'Systèmes en silos',
+    'challenges.challenge3.description': 'Le manque d\'intégration entre les différents outils logiciels entraîne la fragmentation des données et des problèmes de communication.',
+    'challenges.challenge4.title': 'Limitations d\'évolutivité',
+    'challenges.challenge4.description': 'Incapacité de s\'adapter rapidement aux besoins changeants de l\'entreprise et de gérer des charges de travail accrues.',
+    'aiFeatures.title': 'Fonctionnalités basées sur l\'IA',
+    'aiFeatures.subtitle': 'Notre plateforme exploite les dernières avancées en matière d\'intelligence artificielle pour fournir des outils puissants qui automatisent les tâches, améliorent la précision et améliorent les résultats commerciaux.',
+    'aiFeatures.feature1.title': 'Automatisation intelligente',
+    'aiFeatures.feature1.description': 'Automatisez les tâches et les flux de travail répétitifs grâce à la prise de décision basée sur l\'IA.',
+    'aiFeatures.feature2.title': 'Analyse prédictive',
+    'aiFeatures.feature2.description': 'Obtenez des informations sur les tendances futures et prenez des décisions basées sur les données grâce à l\'analyse prédictive.',
+    'aiFeatures.feature3.title': 'Sécurité renforcée',
+    'aiFeatures.feature3.description': 'Protégez vos données grâce à des mesures de sécurité avancées basées sur l\'IA et à la détection des menaces.',
+    'aiFeatures.feature4.title': 'Expériences personnalisées',
+    'aiFeatures.feature4.description': 'Créez des expériences personnalisées pour vos clients grâce à des recommandations et une diffusion de contenu basées sur l\'IA.',
+    'integration.title': 'Intégration transparente',
+    'integration.subtitle': 'Connectez Pickaform à vos outils et systèmes existants pour créer un flux de travail unifié et efficace.',
+    'integration.platform1': 'Salesforce',
+    'integration.platform2': 'Slack',
+    'integration.platform3': 'Google Workspace',
+    'integration.platform4': 'Microsoft Office 365',
+    'security.title': 'Sécurité de niveau entreprise',
+    'security.subtitle': 'Nous nous engageons à fournir le plus haut niveau de sécurité pour protéger vos données et assurer la conformité aux réglementations de l\'industrie.',
+    'security.compliance1': 'RGPD',
+    'security.compliance2': 'HIPAA',
+    'security.compliance3': 'SOC 2',
+    'security.compliance4': 'ISO 27001',
+    'testimonials.title': 'Ce que disent nos utilisateurs',
+    'testimonials.subtitle': 'Découvrez comment Pickaform a aidé des entreprises comme la vôtre à transformer leurs opérations et à obtenir des résultats remarquables.',
+    'testimonials.quote1': 'Pickaform a révolutionné notre flux de travail. L\'automatisation basée sur l\'IA nous a permis de gagner d\'innombrables heures et d\'améliorer notre précision.',
+    'testimonials.author1': 'John Smith, PDG d\'Acme Corp',
+    'testimonials.quote2': 'Les fonctionnalités de sécurité sont excellentes. Nous pouvons être tranquilles en sachant que nos données sont en sécurité et conformes aux réglementations.',
+    'testimonials.author2': 'Alice Johnson, CTO de Beta Inc',
+    'pricing.title': 'Plans de tarification flexibles',
+    'pricing.subtitle': 'Choisissez le plan qui correspond le mieux à vos besoins et à votre budget. Commencez par un essai gratuit et passez à la version supérieure au fur et à mesure de votre croissance.',
+    'pricing.plan1.title': 'Basique',
+    'pricing.plan1.price': 'Gratuit',
+    'pricing.plan1.description': 'Pour les particuliers et les petites équipes qui débutent avec l\'automatisation des processus.',
+    'pricing.plan1.features': ['5 utilisateurs', 'Automatisation de base', 'Stockage limité'],
+    'pricing.plan2.title': 'Standard',
+    'pricing.plan2.price': '49 $/mois',
+    'pricing.plan2.description': 'Pour les entreprises en croissance qui ont besoin de fonctionnalités et d\'une assistance plus avancées.',
+    'pricing.plan2.features': ['25 utilisateurs', 'Automatisation avancée', 'Assistance prioritaire', '100 Go de stockage'],
+    'pricing.plan3.title': 'Entreprise',
+    'pricing.plan3.price': 'Tarification personnalisée',
+    'pricing.plan3.description': 'Pour les grandes organisations qui ont besoin de solutions personnalisées et d\'une assistance dédiée.',
+    'pricing.plan3.features': ['Utilisateurs illimités', 'Intégrations personnalisées', 'Assistance dédiée', 'Stockage illimité'],
+    'makers.title': 'Fait avec ❤️ pour les créateurs',
+    'makers.subtitle': 'Donner aux créateurs et aux innovateurs les outils dont ils ont besoin pour donner vie à leurs idées.',
+    'makers.description': 'Pickaform est conçu pour être intuitif et facile à utiliser, afin que vous puissiez vous concentrer sur la création et l\'innovation. Que vous construisiez un nouveau produit, automatisiez un flux de travail ou rationalisiez vos processus métier, Pickaform est là pour vous.',
+    'footer.description': 'Automatisez, intégrez et développez votre entreprise avec la plateforme la plus intuitive basée sur l\'IA.',
+    'footer.solutions': 'Solutions',
+    'footer.forEnterprise': 'Pour les entreprises',
+    'footer.forSMB': 'Pour les PME',
+    'footer.forIT': 'Pour les professionnels de l\'informatique',
+    'footer.forBusiness': 'Pour les chefs d\'entreprise',
+    'footer.resources': 'Ressources',
+    'footer.documentation': 'Documentation',
+    'footer.blog': 'Blog',
+    'footer.caseStudies': 'Études de cas',
+    'footer.support': 'Assistance',
+    'footer.contact': 'Contactez-nous',
+    'footer.contactText': 'Vous avez des questions ? Contactez-nous pour en savoir plus sur la façon dont Pickaform peut aider votre entreprise.',
+    'footer.copyright': 'Tous droits réservés.',
+    'footer.legal': 'Mentions légales',
+    'footer.privacy': 'Politique de confidentialité',
+    'footer.terms': 'Conditions d\'utilisation',
+    'demoButton': 'Demander une démo',
+    'screenshots.title': 'Captures d\'écran du produit',
+    'screenshots.description': 'Découvrez l\'interface intuitive de Pickaform qui vous aide à gérer vos processus métier en toute simplicité.',
+    'screenshots.applicant': 'Système de suivi des candidats',
+    'screenshots.applicantDesc': 'Gérez votre processus de recrutement avec notre concepteur de workflow visuel. De la candidature à la décision d\'embauche.',
+    'screenshots.projects': 'Gestion de projets et tâches',
+    'screenshots.projectsDesc': 'Suivez l\'avancement des projets, analysez la répartition de la charge de travail et visualisez les performances de votre équipe.',
   },
-  'header.aiFeatures': {
-    fr: 'IA Intégrée',
-    en: 'Built-in AI'
-  },
-  'header.integration': {
-    fr: 'Intégrations',
-    en: 'Integrations'
-  },
-  'header.pricing': {
-    fr: 'Nos offres',
-    en: 'Pricing'
-  },
-  'header.makers': {
-    fr: 'Makers',
-    en: 'Makers'
-  },
-  'header.security': {
-    fr: 'Sécurité',
-    en: 'Security'
-  },
-  'header.testimonials': {
-    fr: 'Témoignages',
-    en: 'Testimonials'
-  },
-  'header.demo': {
-    fr: 'Demander une démo',
-    en: 'Request a demo'
-  },
-  
-  'hero.title': {
-    fr: 'Pickaform : le no-code conçu pour les grands comptes',
-    en: 'Pickaform: no-code designed for enterprise'
-  },
-  'hero.subtitle': {
-    fr: '25 ans d\'expertise en optimisation des process métiers condensée en un outil puissant et intuitif. Automatisez, systématisez et optimisez la gestion de vos processus.',
-    en: '25 years of business process optimization expertise condensed into a powerful and intuitive tool. Automate, systematize and optimize your process management.'
-  },
-  
-  'aiFeatures.title': {
-    fr: 'Décuplez votre productivité avec notre IA intégrée !',
-    en: 'Boost your productivity with our built-in AI!'
-  },
-  'aiFeatures.subtitle': {
-    fr: 'Créez des applications fonctionnelles en quelques minutes et améliorez le contenu de vos process métiers grâce à l\'intelligence artificielle.',
-    en: 'Create functional applications in minutes and enhance your business processes with artificial intelligence.'
-  },
-  
-  'aiFeatures.generateApps.title': {
-    fr: 'Générez des applications en quelques clics',
-    en: 'Generate applications with a few clicks'
-  },
-  'aiFeatures.generateApps.subtitle': {
-    fr: 'Ne perdez plus de temps à concevoir vos applications ! Avec notre IA intégrée, créez une app fonctionnelle en quelques minutes.',
-    en: 'Stop wasting time designing your applications! With our built-in AI, create a functional app in minutes.'
-  },
-  'aiFeatures.generateApps.step1.title': {
-    fr: 'Briefez l\'IA en quelques lignes',
-    en: 'Brief the AI in a few lines'
-  },
-  'aiFeatures.generateApps.step1.description': {
-    fr: 'Décrivez simplement votre besoin à notre assistant intelligent.',
-    en: 'Simply describe your needs to our intelligent assistant.'
-  },
-  'aiFeatures.generateApps.step2.title': {
-    fr: 'Cliquez sur "Générer l\'application"',
-    en: 'Click on "Generate application"'
-  },
-  'aiFeatures.generateApps.step2.description': {
-    fr: 'Notre IA crée la structure, les champs et le workflow adaptés.',
-    en: 'Our AI creates the appropriate structure, fields and workflow.'
-  },
-  'aiFeatures.generateApps.step3.title': {
-    fr: 'Testez et affinez le résultat',
-    en: 'Test and refine the result'
-  },
-  'aiFeatures.generateApps.step3.description': {
-    fr: 'Avec des données automatiquement générées pour tester votre app.',
-    en: 'With automatically generated data to test your app.'
-  },
-  'aiFeatures.generateApps.step4.title': {
-    fr: 'Validez votre app',
-    en: 'Validate your app'
-  },
-  'aiFeatures.generateApps.step4.description': {
-    fr: 'Déployez rapidement et commencez à l\'utiliser immédiatement.',
-    en: 'Deploy quickly and start using it immediately.'
-  },
-  'aiFeatures.generateApps.conclusion': {
-    fr: 'Difficile de faire plus rapide et intuitif !',
-    en: 'Hard to make it faster and more intuitive!'
-  },
-  
-  'aiFeatures.intelligence.title': {
-    fr: 'Ajoutez une touche d\'intelligence à vos applications !',
-    en: 'Add a touch of intelligence to your applications!'
-  },
-  'aiFeatures.intelligence.subtitle': {
-    fr: 'Grâce aux champs IA, générez automatiquement du contenu pertinent et contextuel directement dans vos applications.',
-    en: 'Thanks to AI fields, automatically generate relevant and contextual content directly in your applications.'
-  },
-  'aiFeatures.intelligence.summaries': {
-    fr: 'Résumés',
-    en: 'Summaries'
-  },
-  'aiFeatures.intelligence.briefs': {
-    fr: 'Briefs',
-    en: 'Briefs'
-  },
-  'aiFeatures.intelligence.reports': {
-    fr: 'Rapports',
-    en: 'Reports'
-  },
-  'aiFeatures.intelligence.textAnalysis': {
-    fr: 'Analyses de texte',
-    en: 'Text Analysis'
-  },
-  'aiFeatures.intelligence.emails': {
-    fr: 'Emails',
-    en: 'Emails'
-  },
-  'aiFeatures.intelligence.visuals': {
-    fr: 'Visuels',
-    en: 'Visuals'
-  },
-  'aiFeatures.intelligence.possibilities': {
-    fr: 'Les possibilités sont infinies ! Notre assistant IA est là pour vous aider, en temps réel, à maximiser l\'usage de Pickaform !',
-    en: 'The possibilities are endless! Our AI assistant is here to help you, in real time, to maximize the use of Pickaform!'
-  },
-  
-  'aiFeatures.question.title': {
-    fr: 'Une question sur Pickaform ?',
-    en: 'A question about Pickaform?'
-  },
-  'aiFeatures.question.description': {
-    fr: 'Ne restez pas bloqué ! Notre assistant IA répond à toutes vos questions et vous guide étape par étape pour exploiter pleinement notre outil.',
-    en: 'Don\'t get stuck! Our AI assistant answers all your questions and guides you step by step to fully leverage our tool.'
-  },
-  
-  'challenges.title': {
-    fr: 'Le défi des grandes entreprises',
-    en: 'The enterprise challenge'
-  },
-  'challenges.subtitle': {
-    fr: 'Le monde corporate fait face à des défis qui sont propres à son échelle. Résultat ? Un temps gaspillé, des erreurs humaines, des décisions retardées et des opportunités perdues.',
-    en: 'The corporate world faces challenges specific to its scale. The result? Wasted time, human errors, delayed decisions, and lost opportunities.'
-  },
-  'challenges.dispersed.title': {
-    fr: 'Process dispersés',
-    en: 'Scattered processes'
-  },
-  'challenges.dispersed.description': {
-    fr: 'Les informations critiques sont éparpillées dans différents systèmes.',
-    en: 'Critical information is scattered across different systems.'
-  },
-  'challenges.lost.title': {
-    fr: 'Fichiers égarés',
-    en: 'Misplaced files'
-  },
-  'challenges.lost.description': {
-    fr: 'Les documents importants se perdent dans des dossiers partagés mal organisés.',
-    en: 'Important documents get lost in poorly organized shared folders.'
-  },
-  'challenges.lostInfo.title': {
-    fr: 'Informations perdues',
-    en: 'Lost information'
-  },
-  'challenges.lostInfo.description': {
-    fr: 'Des notes internes cruciales qui restent non lues et inaccessibles.',
-    en: 'Crucial internal notes remain unread and inaccessible.'
-  },
-  'challenges.inefficient.title': {
-    fr: 'Échanges inefficaces',
-    en: 'Inefficient exchanges'
-  },
-  'challenges.inefficient.description': {
-    fr: 'Communication par emails sans traçabilité ni suivi structuré.',
-    en: 'Email communication without traceability or structured follow-up.'
-  },
-  'challenges.solutionsTitle': {
-    fr: 'Pourquoi les solutions classiques ne suffisent pas ?',
-    en: 'Why traditional solutions are not enough?'
-  },
-  'challenges.solutionsSubtitle': {
-    fr: 'Les grandes entreprises ont besoin de solutions qui vont bien au-delà des outils classiques. Elles nécessitent des systèmes sur mesure qui s\'adaptent à des exigences de sécurité, de flexibilité et d\'efficacité strictes.',
-    en: 'Large companies need solutions that go well beyond traditional tools. They require custom systems that adapt to strict security, flexibility, and efficiency requirements.'
-  },
-  'challenges.solution1.title': {
-    fr: 'Gestion de process métiers complexes',
-    en: 'Complex business process management'
-  },
-  'challenges.solution1.description': {
-    fr: 'Des process qui évoluent avec les données et favorisent la collaboration fluide entre services.',
-    en: 'Processes that evolve with data and promote smooth collaboration between departments.'
-  },
-  'challenges.solution2.title': {
-    fr: 'Audit et traçabilité',
-    en: 'Audit and traceability'
-  },
-  'challenges.solution2.description': {
-    fr: 'Chaque décision prise est suivie et documentée pour garantir une transparence totale.',
-    en: 'Every decision is tracked and documented to ensure complete transparency.'
-  },
-  'challenges.solution3.title': {
-    fr: 'Gestion fine des droits d\'accès',
-    en: 'Fine-grained access rights management'
-  },
-  'challenges.solution3.description': {
-    fr: 'Un contrôle strict des utilisateurs et groupes d\'utilisateurs pour garantir la sécurité sans contrainte.',
-    en: 'Strict control of users and user groups to ensure security without constraints.'
-  },
-  'challenges.solution4.title': {
-    fr: 'UI/UX intuitive',
-    en: 'Intuitive UI/UX'
-  },
-  'challenges.solution4.description': {
-    fr: 'Une interface simple pour une adoption rapide, même par les collaborateurs non-techniques.',
-    en: 'A simple interface for quick adoption, even by non-technical employees.'
-  },
-  'challenges.conclusion': {
-    fr: 'Automatiser, systématiser et optimiser la gestion des process métier : la solution gagnante pour les grandes entreprises !',
-    en: 'Automate, systematize, and optimize business process management: the winning solution for large companies!'
-  },
-  'challenges.callToAction': {
-    fr: 'Demander une démo',
-    en: 'Request a demo'
-  },
-  
-  'integration.title': {
-    fr: 'Boostez votre stack no-code : Pickaform est compatible avec Make !',
-    en: 'Boost your no-code stack: Pickaform is compatible with Make!'
-  },
-  'integration.subtitle': {
-    fr: 'Intégrez Pickaform à votre stack no-code en quelques clics. Créez des solutions sur mesure pour répondre aux défis complexes du monde corporate.',
-    en: 'Integrate Pickaform into your no-code stack in a few clicks. Create custom solutions to address the complex challenges of the corporate world.'
-  },
-  'integration.connect.title': {
-    fr: 'Connectez vos outils préférés',
-    en: 'Connect your favorite tools'
-  },
-  'integration.connect.subtitle': {
-    fr: 'Grâce à l\'intégration avec Make, Pickaform peut communiquer avec plus de 2000 applications et services. Automatisez des flux de travail complexes sans écrire une seule ligne de code.',
-    en: 'Thanks to integration with Make, Pickaform can communicate with more than 2000 applications and services. Automate complex workflows without writing a single line of code.'
-  },
-  'integration.feature1': {
-    fr: 'Connectez Pickaform avec vos outils existants',
-    en: 'Connect Pickaform with your existing tools'
-  },
-  'integration.feature2': {
-    fr: 'Automatisez des processus entre plusieurs plateformes',
-    en: 'Automate processes across multiple platforms'
-  },
-  'integration.feature3': {
-    fr: 'Créez des scenarios d\'automatisation personnalisés',
-    en: 'Create custom automation scenarios'
-  },
-  'integration.buttonText': {
-    fr: 'Découvrir les intégrations possibles',
-    en: 'Discover possible integrations'
-  },
-  
-  'security.title': {
-    fr: 'Le no-code : un cauchemar pour les DSI ?',
-    en: 'No-code: a nightmare for CIOs?'
-  },
-  'security.subtitle': {
-    fr: 'Le no-code peut être un casse-tête pour les DSI… mais avec Pickaform, les données restent sous contrôle.',
-    en: 'No-code can be a headache for CIOs... but with Pickaform, data remains under control.'
-  },
-  'security.feature1.title': {
-    fr: 'Solution On-Premise pour les grands comptes',
-    en: 'On-Premise solution for enterprise accounts'
-  },
-  'security.feature1.description': {
-    fr: 'Tout reste sous contrôle. La sécurité et la gouvernance des données sont garanties.',
-    en: 'Everything remains under control. Data security and governance are guaranteed.'
-  },
-  'security.feature2.title': {
-    fr: 'Gestion avancée des droits d\'accès',
-    en: 'Advanced access rights management'
-  },
-  'security.feature2.description': {
-    fr: 'Une sécurité flexible et optimale pour chaque utilisateur et groupe.',
-    en: 'Flexible and optimal security for each user and group.'
-  },
-  'security.feature3.title': {
-    fr: 'Capacité d\'audit des décisions',
-    en: 'Decision audit capability'
-  },
-  'security.feature3.description': {
-    fr: 'Suivez et analysez toutes les actions prises par les collaborateurs pour une transparence totale.',
-    en: 'Track and analyze all actions taken by employees for complete transparency.'
-  },
-  'security.feature4.title': {
-    fr: 'Sécurité conforme aux normes',
-    en: 'Compliance with standards'
-  },
-  'security.feature4.description': {
-    fr: 'Respectez les exigences réglementaires les plus strictes de votre secteur.',
-    en: 'Meet the strictest regulatory requirements in your industry.'
-  },
-  'security.conclusion': {
-    fr: 'Pickaform offre une combinaison parfaite pour répondre aux exigences les plus strictes des DSI.',
-    en: 'Pickaform offers a perfect combination to meet the strictest requirements of CIOs.'
-  },
-  'security.callToAction': {
-    fr: 'Sécurisez votre transformation digitale dès maintenant !',
-    en: 'Secure your digital transformation now!'
-  },
-  
-  'pricing.title': {
-    fr: 'Nos offres',
-    en: 'Our Pricing'
-  },
-  'pricing.cloud.title': {
-    fr: 'Cloud',
-    en: 'Cloud'
-  },
-  'pricing.silver.title': {
-    fr: 'Silver',
-    en: 'Silver'
-  },
-  'pricing.gold.title': {
-    fr: 'Gold',
-    en: 'Gold'
-  },
-  'pricing.platinum.title': {
-    fr: 'Platinum',
-    en: 'Platinum'
-  },
-  'pricing.silver.price': {
-    fr: '15,00€',
-    en: '€15.00'
-  },
-  'pricing.gold.price': {
-    fr: '12,50€',
-    en: '€12.50'
-  },
-  'pricing.platinum.price': {
-    fr: '11,00€',
-    en: '€11.00'
-  },
-  'pricing.perUser': {
-    fr: 'Utilisateur / mois',
-    en: 'User / month'
-  },
-  'pricing.feature1': {
-    fr: '10 Users',
-    en: '10 Users'
-  },
-  'pricing.feature2': {
-    fr: '3 Applications',
-    en: '3 Applications'
-  },
-  'pricing.feature3': {
-    fr: '10 GB Storage',
-    en: '10 GB Storage'
-  },
-  'pricing.feature4': {
-    fr: 'Formulaires illimités',
-    en: 'Unlimited forms'
-  },
-  'pricing.feature5': {
-    fr: 'Workflows illimités',
-    en: 'Unlimited workflows'
-  },
-  'pricing.onpremise.title': {
-    fr: 'Solution Entreprise',
-    en: 'Enterprise Solution'
-  },
-  'pricing.onpremise.subtitle': {
-    fr: 'Déployez Pickaform dans votre infrastructure pour un contrôle total',
-    en: 'Deploy Pickaform in your infrastructure for total control'
-  },
-  'pricing.onpremise.feature1': {
-    fr: 'Sécurité et conformité maximales',
-    en: 'Maximum security and compliance'
-  },
-  'pricing.onpremise.feature2': {
-    fr: 'Intégration avec votre infrastructure existante',
-    en: 'Integration with your existing infrastructure'
-  },
-  'pricing.onpremise.feature3': {
-    fr: 'Support dédié et personnalisé',
-    en: 'Dedicated and personalized support'
-  },
-  'pricing.onpremise.feature4': {
-    fr: 'Licences adaptées à vos besoins',
-    en: 'Licenses adapted to your needs'
-  },
-  
-  'makers.title': {
-    fr: 'Offre makers / No-coders',
-    en: 'Makers / No-coders offer'
-  },
-  'makers.subtitle': {
-    fr: 'Pourquoi les makers/no-coders devraient se tourner vers les grandes entreprises ?',
-    en: 'Why should makers/no-coders turn to large companies?'
-  },
-  'makers.benefit1.title': {
-    fr: 'Valorisez votre expertise métier',
-    en: 'Showcase your business expertise'
-  },
-  'makers.benefit1.description': {
-    fr: 'Accédez à un marché en pleine expansion tout en mettant en avant vos compétences spécifiques.',
-    en: 'Access a growing market while highlighting your specific skills.'
-  },
-  'makers.benefit2.title': {
-    fr: 'Réduisez vos risques d\'impayés',
-    en: 'Reduce your risk of non-payment'
-  },
-  'makers.benefit2.description': {
-    fr: 'Offrez des solutions robustes aux grandes entreprises avec des processus de paiement fiables.',
-    en: 'Offer robust solutions to large companies with reliable payment processes.'
-  },
-  'makers.benefit3.title': {
-    fr: 'Construisez des relations pérennes',
-    en: 'Build lasting relationships'
-  },
-  'makers.benefit3.description': {
-    fr: 'Développez des partenariats durables avec des clients de confiance, prêts à investir dans l\'innovation.',
-    en: 'Develop sustainable partnerships with trusted clients ready to invest in innovation.'
-  },
-  'makers.benefit4.title': {
-    fr: 'Ayez un impact durable',
-    en: 'Have a lasting impact'
-  },
-  'makers.benefit4.description': {
-    fr: 'Touchez des milliers de collaborateurs à travers des solutions à fort potentiel de transformation.',
-    en: 'Reach thousands of employees through solutions with high transformation potential.'
-  },
-  'makers.conclusion': {
-    fr: 'En vous tournant vers les grandes entreprises, vous ne vous contentez pas de créer des applications, vous façonnez l\'avenir des process d\'entreprise.',
-    en: 'By turning to large companies, you are not just creating applications, you are shaping the future of business processes.'
-  },
-  'makers.callToAction': {
-    fr: 'Ne vous cantonnez plus aux petites structures. Créez des solutions adaptées aux grands comptes en quelques minutes, faites-les évoluer pendant des décennies !',
-    en: 'Don\'t limit yourself to small structures anymore. Create solutions adapted to large accounts in minutes, evolve them for decades!'
-  },
-  'makers.callToActionButton': {
-    fr: 'Passez à l\'action !',
-    en: 'Take action!'
-  },
-  
-  'testimonials.title': {
-    fr: 'Témoignages clients',
-    en: 'Customer testimonials'
-  },
-  'testimonials.subtitle': {
-    fr: 'Nos clients l\'ont adopté… découvrez pourquoi ils font confiance à Pickaform !',
-    en: 'Our customers have adopted it... find out why they trust Pickaform!'
-  },
-  'testimonials.user1.text': {
-    fr: 'Pickaform nous a permis de digitaliser nos processus d\'approbation en un temps record. Ce qui prenait auparavant des semaines ne prend plus que quelques minutes. L\'interface est intuitive même pour nos collaborateurs les moins techniques.',
-    en: 'Pickaform allowed us to digitize our approval processes in record time. What previously took weeks now takes only a few minutes. The interface is intuitive even for our least technical employees.'
-  },
-  'testimonials.user1.name': {
-    fr: 'Sophie Laurent',
-    en: 'Sophie Laurent'
-  },
-  'testimonials.user1.position': {
-    fr: 'Directrice des Opérations',
-    en: 'Operations Director'
-  },
-  'testimonials.user1.company': {
-    fr: 'Finance Plus',
-    en: 'Finance Plus'
-  },
-  'testimonials.user2.text': {
-    fr: 'En tant que DSI, la sécurité est ma priorité absolue. Pickaform est la seule solution no-code qui a répondu à toutes nos exigences en matière de contrôle d\'accès et de gestion des données. L\'option on-premise est un vrai plus.',
-    en: 'As a CIO, security is my top priority. Pickaform is the only no-code solution that met all our requirements for access control and data management. The on-premise option is a real plus.'
-  },
-  'testimonials.user2.name': {
-    fr: 'Thomas Moreau',
-    en: 'Thomas Moreau'
-  },
-  'testimonials.user2.position': {
-    fr: 'Responsable IT',
-    en: 'IT Manager'
-  },
-  'testimonials.user2.company': {
-    fr: 'GroupeSoft',
-    en: 'GroupeSoft'
-  },
-  'testimonials.user3.text': {
-    fr: 'J\'ai créé plus de 15 applications avec Pickaform en seulement quelques mois. L\'outil est incroyablement flexible et la nouvelle fonctionnalité IA nous a fait gagner un temps considérable dans la conception et le développement.',
-    en: 'I created more than 15 applications with Pickaform in just a few months. The tool is incredibly flexible and the new AI feature has saved us considerable time in design and development.'
-  },
-  'testimonials.user3.name': {
-    fr: 'Marie Dubois',
-    en: 'Marie Dubois'
-  },
-  'testimonials.user3.position': {
-    fr: 'Chef de Projet Digital',
-    en: 'Digital Project Manager'
-  },
-  'testimonials.user3.company': {
-    fr: 'ConseilCorp',
-    en: 'ConseilCorp'
-  },
-  
-  'footer.description': {
-    fr: 'Le no-code conçu pour les grands comptes. Automatisez vos processus métier avec une solution puissante et intuitive.',
-    en: 'No-code designed for enterprise accounts. Automate your business processes with a powerful and intuitive solution.'
-  },
-  'footer.solutions': {
-    fr: 'Solutions',
-    en: 'Solutions'
-  },
-  'footer.forEnterprise': {
-    fr: 'Pour les grands comptes',
-    en: 'For enterprise'
-  },
-  'footer.forSMB': {
-    fr: 'Pour les PME',
-    en: 'For SMBs'
-  },
-  'footer.forIT': {
-    fr: 'Pour les DSI',
-    en: 'For CIOs'
-  },
-  'footer.forBusiness': {
-    fr: 'Pour les métiers',
-    en: 'For business teams'
-  },
-  'footer.resources': {
-    fr: 'Ressources',
-    en: 'Resources'
-  },
-  'footer.documentation': {
-    fr: 'Documentation',
-    en: 'Documentation'
-  },
-  'footer.blog': {
-    fr: 'Blog',
-    en: 'Blog'
-  },
-  'footer.caseStudies': {
-    fr: 'Cas clients',
-    en: 'Case studies'
-  },
-  'footer.support': {
-    fr: 'Assistance',
-    en: 'Support'
-  },
-  'footer.contact': {
-    fr: 'Contactez-nous',
-    en: 'Contact us'
-  },
-  'footer.contactText': {
-    fr: 'Vous souhaitez en savoir plus sur Pickaform ? N\'hésitez pas à prendre contact avec notre équipe.',
-    en: 'Want to know more about Pickaform? Feel free to contact our team.'
-  },
-  'footer.copyright': {
-    fr: 'Tous droits réservés.',
-    en: 'All rights reserved.'
-  },
-  'footer.legal': {
-    fr: 'Mentions légales',
-    en: 'Legal notice'
-  },
-  'footer.privacy': {
-    fr: 'Politique de confidentialité',
-    en: 'Privacy policy'
-  },
-  'footer.terms': {
-    fr: 'CGU',
-    en: 'Terms of use'
-  }
 };
 
-export const getTranslation = (key: TranslationKey, language: 'fr' | 'en'): string => {
-  return translations[key][language];
+export const getTranslation = (key: string, language: string) => {
+  const currentLanguage = language as keyof typeof translations;
+  return translations[currentLanguage]?.[key] || translations.en[key] || key;
 };
