@@ -49,6 +49,33 @@ const ImageCarousel: React.FC = () => {
               />
             </div>
           </CarouselItem>
+          <CarouselItem>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/9f376071-e848-42fd-aeb0-2b93bcfe4587.png" 
+                alt="Project details form" 
+                className="rounded-lg shadow-lg max-h-[600px] w-auto"
+              />
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/78938602-d967-4e9b-b63d-12e94f8e239d.png" 
+                alt="Contract workflow" 
+                className="rounded-lg shadow-lg max-h-[600px] w-auto"
+              />
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/82310a0c-0783-417e-a53c-dc37c22b2179.png" 
+                alt="Incident tracking" 
+                className="rounded-lg shadow-lg max-h-[600px] w-auto"
+              />
+            </div>
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious className="left-2 md:left-4" />
         <CarouselNext className="right-2 md:right-4" />
