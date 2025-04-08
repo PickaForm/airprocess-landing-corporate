@@ -76,6 +76,15 @@ const ImageCarousel: React.FC = () => {
               />
             </div>
           </CarouselItem>
+          <CarouselItem>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/4687886d-65c9-4469-b222-3dab9088d9f3.png" 
+                alt="Incident tracking dashboard" 
+                className="rounded-lg shadow-lg max-h-[600px] w-auto"
+              />
+            </div>
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious className="left-2 md:left-4" />
         <CarouselNext className="right-2 md:right-4" />
