@@ -34,7 +34,7 @@ const PrivacyPolicy: React.FC = () => {
               <p>Bien que nous ne collections pas de données, nous prenons toutes les mesures nécessaires pour assurer la sécurité de notre site web contre les accès non autorisés ou les modifications.</p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4">Contact</h2>
-              <p>Pour toute question concernant notre politique de confidentialité, veuillez nous contacter à l'adresse suivante : [Votre adresse email]</p>
+              <p>Pour toute question concernant notre politique de confidentialité, veuillez nous contacter à l'adresse suivante : contact@pickaform.com</p>
             </>
           ) : (
             <>
@@ -54,7 +54,7 @@ const PrivacyPolicy: React.FC = () => {
               <p>Although we do not collect data, we take all necessary measures to ensure the security of our website against unauthorized access or modifications.</p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4">Contact</h2>
-              <p>For any questions regarding our privacy policy, please contact us at the following address: [Your email address]</p>
+              <p>For any questions regarding our privacy policy, please contact us at the following address: contact@pickaform.com</p>
             </>
           )}
         </div>

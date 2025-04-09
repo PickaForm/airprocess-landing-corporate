@@ -40,7 +40,7 @@ const TermsOfUse: React.FC = () => {
               <p>Pickaform se réserve le droit de modifier ces Conditions Générales d'Utilisation à tout moment. Les modifications prennent effet dès leur publication sur le site.</p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4">Loi applicable</h2>
-              <p>Les présentes Conditions Générales d'Utilisation sont régies par le droit français. Tout litige relatif à l'interprétation ou à l'exécution des présentes conditions sera soumis aux tribunaux compétents de [Votre juridiction].</p>
+              <p>Les présentes Conditions Générales d'Utilisation sont régies par le droit français. Tout litige relatif à l'interprétation ou à l'exécution des présentes conditions sera soumis aux tribunaux compétents du Tribunal de Paris.</p>
             </>
           ) : (
             <>
@@ -66,7 +66,7 @@ const TermsOfUse: React.FC = () => {
               <p>Pickaform reserves the right to modify these Terms of Use at any time. Modifications take effect as soon as they are published on the site.</p>
               
               <h2 className="text-2xl font-semibold mt-8 mb-4">Applicable Law</h2>
-              <p>These Terms of Use are governed by French law. Any dispute relating to the interpretation or execution of these terms will be submitted to the competent courts of [Your jurisdiction].</p>
+              <p>These Terms of Use are governed by French law. Any dispute relating to the interpretation or execution of these terms will be submitted to the competent courts of the Paris Tribunal.</p>
             </>
           )}
         </div>
