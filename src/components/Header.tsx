@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import LanguageSelector from './LanguageSelector';
@@ -66,7 +65,7 @@ const Header: React.FC = () => {
             <img 
               src="/lovable-uploads/30d100fd-66c9-4395-abc8-235de7e12e76.png" 
               alt="Pickaform Logo" 
-              className="w-auto" 
+              className="w-[256px] h-[60px] object-contain" 
             />
           </Link>
         </div>
