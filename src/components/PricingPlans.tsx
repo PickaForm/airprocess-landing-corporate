@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Users, Cloud, Database } from 'lucide-react';
@@ -100,6 +99,10 @@ const PricingPlans: React.FC = () => {
                 </CardFooter>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-8 mb-16 text-gray-700 max-w-xl mx-auto">
+            <p>{getTranslation('pricing.volume.info', language)}</p>
           </div>
         </div>
 

@@ -1,4 +1,3 @@
-
 type TranslationKey = 
   | 'header.challenges'
   | 'header.aiFeatures'
@@ -109,6 +108,7 @@ type TranslationKey =
   | 'pricing.onpremise.feature2'
   | 'pricing.onpremise.feature3'
   | 'pricing.onpremise.feature4'
+  | 'pricing.volume.info'
   
   | 'makers.title'
   | 'makers.subtitle'
@@ -554,6 +554,10 @@ export const translations: {
   'pricing.enterprise.feature3': {
     fr: '100 GB Storage',
     en: '100 GB Storage'
+  },
+  'pricing.volume.info': {
+    fr: 'Nous proposons des offres au-delà de 100 utilisateurs et à des tarifs dégressifs jusqu\'à 0,6€ après 5000 utilisateurs. Contactez-nous.',
+    en: 'We offer packages beyond 100 users with decreasing rates down to €0.6 after 5000 users. Contact us.'
   },
   'pricing.onpremise.title': {
     fr: 'Solution Entreprise',
