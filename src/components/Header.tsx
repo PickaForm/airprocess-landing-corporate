@@ -62,8 +62,12 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold text-primary">
-            Pickaform
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/30d100fd-66c9-4395-abc8-235de7e12e76.png" 
+              alt="Pickaform Logo" 
+              className="h-10" 
+            />
           </Link>
         </div>
 
