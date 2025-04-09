@@ -8,8 +8,8 @@ interface InViewOptions {
 }
 
 export function useInView<T extends HTMLElement>({
-  threshold = 0.05, // Reduced from 0.1 to 0.05 to trigger earlier
-  rootMargin = '0px 0px -10% 0px', // Added negative bottom margin to trigger before fully in view
+  threshold = 0.05, // Keep the lower threshold
+  rootMargin = '0px 0px -15% 0px', // Increased negative bottom margin to trigger even earlier
   triggerOnce = true
 }: InViewOptions = {}): [RefObject<T>, boolean] {
   const ref = useRef<T>(null);
