@@ -46,6 +46,18 @@ const PricingPlans: React.FC = () => {
       ],
       price: getTranslation('pricing.platinum.price', language),
       unit: getTranslation('pricing.perUser', language)
+    },
+    {
+      title: getTranslation('pricing.enterprise.title', language),
+      features: [
+        getTranslation('pricing.enterprise.feature1', language),
+        getTranslation('pricing.enterprise.feature2', language),
+        getTranslation('pricing.enterprise.feature3', language),
+        getTranslation('pricing.feature4', language),
+        getTranslation('pricing.feature5', language)
+      ],
+      price: getTranslation('pricing.enterprise.price', language),
+      unit: getTranslation('pricing.perUser', language)
     }
   ];
 
@@ -62,24 +74,24 @@ const PricingPlans: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-semibold text-primary">{getTranslation('pricing.cloud.title', language)}</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cloudPlans.map((plan, index) => (
               <Card key={index} className={`border shadow-lg hover:shadow-xl transition-shadow duration-300 ${plan.highlight ? 'border-primary-light' : ''}`}>
                 <CardHeader className="text-center pb-2">
-                  <CardTitle className={`text-2xl ${plan.highlight ? 'text-primary-light' : 'text-primary'}`}>
+                  <CardTitle className={`text-xl ${plan.highlight ? 'text-primary-light' : 'text-primary'}`}>
                     {plan.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="text-center mb-6">
-                    <span className="text-3xl font-bold">{plan.price}</span>
-                    <span className="text-gray-500 ml-1">{plan.unit}</span>
+                    <span className="text-2xl font-bold">{plan.price}</span>
+                    <span className="text-gray-500 ml-1 text-sm">{plan.unit}</span>
                   </div>
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <Check className="w-5 h-5 text-primary-light shrink-0 mr-2 mt-0.5" />
-                        <span>{feature}</span>
+                        <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>

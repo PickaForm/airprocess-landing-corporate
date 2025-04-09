@@ -1,3 +1,4 @@
+
 type TranslationKey = 
   | 'header.challenges'
   | 'header.aiFeatures'
@@ -88,15 +89,20 @@ type TranslationKey =
   | 'pricing.silver.title'
   | 'pricing.gold.title'
   | 'pricing.platinum.title'
+  | 'pricing.enterprise.title'
   | 'pricing.silver.price'
   | 'pricing.gold.price'
   | 'pricing.platinum.price'
+  | 'pricing.enterprise.price'
   | 'pricing.perUser'
   | 'pricing.feature1'
   | 'pricing.feature2'
   | 'pricing.feature3'
   | 'pricing.feature4'
   | 'pricing.feature5'
+  | 'pricing.enterprise.feature1'
+  | 'pricing.enterprise.feature2'
+  | 'pricing.enterprise.feature3'
   | 'pricing.onpremise.title'
   | 'pricing.onpremise.subtitle'
   | 'pricing.onpremise.feature1'
@@ -493,6 +499,10 @@ export const translations: {
     fr: 'Platinum',
     en: 'Platinum'
   },
+  'pricing.enterprise.title': {
+    fr: 'Entreprise',
+    en: 'Enterprise'
+  },
   'pricing.silver.price': {
     fr: '15,00€',
     en: '€15.00'
@@ -504,6 +514,10 @@ export const translations: {
   'pricing.platinum.price': {
     fr: '11,00€',
     en: '€11.00'
+  },
+  'pricing.enterprise.price': {
+    fr: '8,00€',
+    en: '€8.00'
   },
   'pricing.perUser': {
     fr: 'Utilisateur / mois',
@@ -528,6 +542,18 @@ export const translations: {
   'pricing.feature5': {
     fr: 'Workflows illimités',
     en: 'Unlimited workflows'
+  },
+  'pricing.enterprise.feature1': {
+    fr: '100 Users',
+    en: '100 Users'
+  },
+  'pricing.enterprise.feature2': {
+    fr: '20 Applications',
+    en: '20 Applications'
+  },
+  'pricing.enterprise.feature3': {
+    fr: '100 GB Storage',
+    en: '100 GB Storage'
   },
   'pricing.onpremise.title': {
     fr: 'Solution Entreprise',
