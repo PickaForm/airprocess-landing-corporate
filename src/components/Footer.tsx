@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import DemoButton from './DemoButton';
 import { Linkedin, Youtube } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
@@ -64,9 +65,9 @@ const Footer: React.FC = () => {
             &copy; {currentYear} Pickaform. {getTranslation('footer.copyright', language)}
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.legal', language)}</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.privacy', language)}</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.terms', language)}</a>
+            <Link to="/legal-notice" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.legal', language)}</Link>
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.privacy', language)}</Link>
+            <Link to="/terms-of-use" className="text-gray-400 hover:text-white text-sm transition-colors">{getTranslation('footer.terms', language)}</Link>
           </div>
         </div>
       </div>
