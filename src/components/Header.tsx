@@ -5,13 +5,14 @@ import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '@/context/LanguageContext';
 import { getTranslation } from '@/constants/translations';
 import { Menu, X } from 'lucide-react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   
   // Vérifier si nous sommes sur la page d'accueil
   const isHomePage = location.pathname === '/';
@@ -25,8 +26,30 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Préfixe pour les liens de navigation
-  const linkPrefix = isHomePage ? '' : '/';
+  // Fonction pour gérer la navigation vers les sections
+  const handleSectionNavigation = (sectionId: string) => {
+    // Si nous ne sommes pas sur la page d'accueil, naviguer d'abord vers la page d'accueil
+    if (!isHomePage) {
+      navigate('/');
+      // Attendre que la navigation soit terminée avant de faire défiler
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Si déjà sur la page d'accueil, faire défiler directement
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    // Fermer le menu mobile s'il est ouvert
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header 
@@ -46,48 +69,69 @@ const Header: React.FC = () => {
 
         {/* Menu pour Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to={`${linkPrefix}#challenges`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          <button 
+            onClick={() => handleSectionNavigation('challenges')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.challenges', language)}
-          </Link>
-          <Link to={`${linkPrefix}#ai-features`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('ai-features')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.aiFeatures', language)}
-          </Link>
-          <Link to={`${linkPrefix}#integration`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('integration')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.integration', language)}
-          </Link>
-          <Link to={`${linkPrefix}#pricing`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('pricing')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.pricing', language)}
-          </Link>
-          <Link to={`${linkPrefix}#makers`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('makers')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.makers', language)}
-          </Link>
-          <Link to={`${linkPrefix}#security`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('security')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.security', language)}
-          </Link>
-          <Link to={`${linkPrefix}#testimonials`} className={cn(
-            "font-medium transition-colors",
-            isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-          )}>
+          </button>
+          <button 
+            onClick={() => handleSectionNavigation('testimonials')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
             {getTranslation('header.testimonials', language)}
-          </Link>
+          </button>
           <LanguageSelector isScrolled={isScrolled} />
         </nav>
 
@@ -110,55 +154,48 @@ const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <Link 
-              to={`${linkPrefix}#challenges`}
+            <button 
+              onClick={() => handleSectionNavigation('challenges')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.challenges', language)}
-            </Link>
-            <Link 
-              to={`${linkPrefix}#ai-features`}
+            </button>
+            <button 
+              onClick={() => handleSectionNavigation('ai-features')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.aiFeatures', language)}
-            </Link>
-            <Link 
-              to={`${linkPrefix}#integration`}
+            </button>
+            <button 
+              onClick={() => handleSectionNavigation('integration')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.integration', language)}
-            </Link>
-            <Link 
-              to={`${linkPrefix}#pricing`}
+            </button>
+            <button 
+              onClick={() => handleSectionNavigation('pricing')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.pricing', language)}
-            </Link>
-            <Link 
-              to={`${linkPrefix}#makers`}
+            </button>
+            <button 
+              onClick={() => handleSectionNavigation('makers')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.makers', language)}
-            </Link>
-            <Link 
-              to={`${linkPrefix}#security`}
+            </button>
+            <button 
+              onClick={() => handleSectionNavigation('security')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.security', language)}
-            </Link>
-            <Link 
-              to={`${linkPrefix}#testimonials`}
+            </button>
+            <button 
+              onClick={() => handleSectionNavigation('testimonials')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.testimonials', language)}
-            </Link>
+            </button>
           </div>
         </div>
       )}
