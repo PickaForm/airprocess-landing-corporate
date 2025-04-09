@@ -66,7 +66,7 @@ const Header: React.FC = () => {
             <img 
               src="/lovable-uploads/30d100fd-66c9-4395-abc8-235de7e12e76.png" 
               alt="Pickaform Logo" 
-              className="h-10" 
+              className="w-auto" 
             />
           </Link>
         </div>
