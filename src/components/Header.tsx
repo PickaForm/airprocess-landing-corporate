@@ -5,11 +5,16 @@ import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '@/context/LanguageContext';
 import { getTranslation } from '@/constants/translations';
 import { Menu, X } from 'lucide-react';
+import { useLocation, Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language } = useLanguage();
+  const location = useLocation();
+  
+  // Vérifier si nous sommes sur la page d'accueil
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +24,9 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Préfixe pour les liens de navigation
+  const linkPrefix = isHomePage ? '' : '/';
 
   return (
     <header 
@@ -31,55 +39,55 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="#" className="text-2xl font-bold text-primary">
+          <Link to="/" className="text-2xl font-bold text-primary">
             Pickaform
-          </a>
+          </Link>
         </div>
 
         {/* Menu pour Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#challenges" className={cn(
+          <Link to={`${linkPrefix}#challenges`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.challenges', language)}
-          </a>
-          <a href="#ai-features" className={cn(
+          </Link>
+          <Link to={`${linkPrefix}#ai-features`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.aiFeatures', language)}
-          </a>
-          <a href="#integration" className={cn(
+          </Link>
+          <Link to={`${linkPrefix}#integration`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.integration', language)}
-          </a>
-          <a href="#pricing" className={cn(
+          </Link>
+          <Link to={`${linkPrefix}#pricing`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.pricing', language)}
-          </a>
-          <a href="#makers" className={cn(
+          </Link>
+          <Link to={`${linkPrefix}#makers`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.makers', language)}
-          </a>
-          <a href="#security" className={cn(
+          </Link>
+          <Link to={`${linkPrefix}#security`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.security', language)}
-          </a>
-          <a href="#testimonials" className={cn(
+          </Link>
+          <Link to={`${linkPrefix}#testimonials`} className={cn(
             "font-medium transition-colors",
             isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
           )}>
             {getTranslation('header.testimonials', language)}
-          </a>
+          </Link>
           <LanguageSelector isScrolled={isScrolled} />
         </nav>
 
@@ -102,55 +110,55 @@ const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <a 
-              href="#challenges" 
+            <Link 
+              to={`${linkPrefix}#challenges`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.challenges', language)}
-            </a>
-            <a 
-              href="#ai-features" 
+            </Link>
+            <Link 
+              to={`${linkPrefix}#ai-features`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.aiFeatures', language)}
-            </a>
-            <a 
-              href="#integration" 
+            </Link>
+            <Link 
+              to={`${linkPrefix}#integration`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.integration', language)}
-            </a>
-            <a 
-              href="#pricing" 
+            </Link>
+            <Link 
+              to={`${linkPrefix}#pricing`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.pricing', language)}
-            </a>
-            <a 
-              href="#makers" 
+            </Link>
+            <Link 
+              to={`${linkPrefix}#makers`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.makers', language)}
-            </a>
-            <a 
-              href="#security" 
+            </Link>
+            <Link 
+              to={`${linkPrefix}#security`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.security', language)}
-            </a>
-            <a 
-              href="#testimonials" 
+            </Link>
+            <Link 
+              to={`${linkPrefix}#testimonials`}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {getTranslation('header.testimonials', language)}
-            </a>
+            </Link>
           </div>
         </div>
       )}
