@@ -32,8 +32,7 @@ const PricingPlans: React.FC = () => {
         getTranslation('pricing.feature5', language)
       ],
       price: getTranslation('pricing.gold.price', language),
-      unit: getTranslation('pricing.perUser', language),
-      highlight: true
+      unit: getTranslation('pricing.perUser', language)
     },
     {
       title: getTranslation('pricing.platinum.title', language),
@@ -76,9 +75,9 @@ const PricingPlans: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cloudPlans.map((plan, index) => (
-              <Card key={index} className={`border shadow-lg hover:shadow-xl transition-shadow duration-300 ${plan.highlight ? 'border-primary-light' : ''}`}>
+              <Card key={index} className="border shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="text-center pb-2">
-                  <CardTitle className={`text-xl ${plan.highlight ? 'text-primary-light' : 'text-primary'}`}>
+                  <CardTitle className="text-xl text-primary">
                     {plan.title}
                   </CardTitle>
                 </CardHeader>
