@@ -17,7 +17,8 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   id
 }) => {
   const [ref, isInView] = useInView<HTMLDivElement>({
-    threshold: 0.1,
+    threshold: 0.05, // Lower threshold to trigger earlier
+    rootMargin: '0px 0px -10% 0px', // Added negative margin to trigger before fully in view
     triggerOnce: true
   });
   
