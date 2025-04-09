@@ -556,8 +556,8 @@ export const translations: {
     en: '100 GB Storage'
   },
   'pricing.volume.info': {
-    fr: 'Nous proposons des offres au-delà de 100 utilisateurs et à des tarifs dégressifs jusqu\'à 0,6€ après 5000 utilisateurs. Contactez-nous.',
-    en: 'We offer packages beyond 100 users with decreasing rates down to €0.6 after 5000 users. Contact us.'
+    fr: 'Nous proposons des offres au-delà de 100 utilisateurs et à des tarifs dégressifs jusqu\'à 0,6€ après 5000 utilisateurs. Nous contacter à contact@pickaform.com',
+    en: 'We offer packages beyond 100 users with decreasing rates down to €0.6 after 5000 users. Contact us at contact@pickaform.com'
   },
   'pricing.onpremise.title': {
     fr: 'Solution Entreprise',
