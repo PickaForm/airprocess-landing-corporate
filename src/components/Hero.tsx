@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-primary via-primary to-blue-900 text-white overflow-hidden">
-      {/* Decorative circles */}
+      {/* Cercles décoratifs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-light/10 rounded-full -mr-32 -mt-32"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-light/10 rounded-full -ml-16 -mb-16"></div>
       
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Decorative wave at bottom */}
+      {/* Vague décorative en bas */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
           <path

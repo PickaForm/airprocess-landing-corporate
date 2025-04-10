@@ -1,5 +1,5 @@
 
-import React, { ReactNode, Children, cloneElement, isValidElement, CSSProperties, ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
@@ -8,15 +8,13 @@ interface AnimatedSectionProps {
   className?: string;
   delay?: number;
   id?: string;
-  childDelay?: number;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
   children, 
   className,
   delay = 0,
-  id,
-  childDelay = 0.1, // Delay between child animations
+  id
 }) => {
   const [ref, isInView] = useInView<HTMLDivElement>({
     threshold: 0.05,
@@ -24,43 +22,19 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     triggerOnce: true
   });
   
-  // Apply animation to children with staggered delay
-  const animatedChildren = Children.map(children, (child, index) => {
-    if (isValidElement(child)) {
-      const childStyle: CSSProperties = {
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(20px)',
-        transition: `opacity 0.5s ease, transform 0.5s ease`,
-        transitionDelay: `${delay + (index * childDelay)}s`,
-      };
-
-      // Only add style to elements that can accept it
-      return cloneElement(child as ReactElement<{ style?: CSSProperties }>, {
-        style: {
-          ...(child.props.style || {}),
-          ...childStyle,
-        },
-      });
-    }
-    return child;
-  });
-  
   return (
     <section
       ref={ref}
       id={id}
       className={cn(
-        'transition-all duration-700',
+        'transition-all duration-500',
         isInView 
-          ? 'opacity-100' 
-          : 'opacity-0',
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-10',
         className
       )}
-      style={{ 
-        transitionDelay: `${delay}s`,
-      }}
     >
-      {animatedChildren}
+      {children}
     </section>
   );
 };
