@@ -1,5 +1,5 @@
 
-import React, { ReactNode, Children, cloneElement, isValidElement } from 'react';
+import React, { ReactNode, Children, cloneElement, isValidElement, ReactElement } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
@@ -23,19 +23,26 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   // Apply animation to each direct child with a small stagger effect
   const animatedChildren = Children.map(children, (child, index) => {
     if (isValidElement(child)) {
-      return cloneElement(child, {
-        className: cn(
-          child.props.className,
-          'transition-all duration-500',
-          isInView 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-10',
-          // Add a small stagger delay based on the index
-          `transition-delay-${index * 100}ms`
-        ),
+      // Properly type the child element
+      const childElement = child as ReactElement;
+      
+      return cloneElement(childElement, {
+        // Only apply className if the original element had one
+        ...(childElement.props.className !== undefined && {
+          className: cn(
+            childElement.props.className,
+            'transition-all duration-500',
+            isInView 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          )
+        }),
         style: {
-          ...child.props.style,
+          ...childElement.props.style,
           transitionDelay: `${index * 100}ms`,
+          transition: 'all 500ms',
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateY(0)' : 'translateY(10px)'
         }
       });
     }
