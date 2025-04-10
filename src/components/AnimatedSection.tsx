@@ -1,5 +1,5 @@
 
-import React, { ReactNode, Children, cloneElement, isValidElement } from 'react';
+import React, { ReactNode, Children, cloneElement, isValidElement, CSSProperties, ReactElement } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
@@ -27,16 +27,17 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   // Apply animation to children with staggered delay
   const animatedChildren = Children.map(children, (child, index) => {
     if (isValidElement(child)) {
-      const childStyle = {
+      const childStyle: CSSProperties = {
         opacity: isInView ? 1 : 0,
         transform: isInView ? 'translateY(0)' : 'translateY(20px)',
         transition: `opacity 0.5s ease, transform 0.5s ease`,
         transitionDelay: `${delay + (index * childDelay)}s`,
       };
 
-      return cloneElement(child, {
+      // Only add style to elements that can accept it
+      return cloneElement(child as ReactElement<{ style?: CSSProperties }>, {
         style: {
-          ...child.props.style,
+          ...(child.props.style || {}),
           ...childStyle,
         },
       });
