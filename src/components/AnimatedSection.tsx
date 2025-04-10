@@ -26,25 +26,26 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       // Properly type the child element
       const childElement = child as ReactElement;
       
-      return cloneElement(childElement, {
-        // Only apply className if the original element had one
-        ...(childElement.props.className !== undefined && {
-          className: cn(
-            childElement.props.className,
-            'transition-all duration-500',
-            isInView 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-10'
-          )
-        }),
+      // Create new props object
+      const newProps: any = {
         style: {
           ...childElement.props.style,
           transitionDelay: `${index * 100}ms`,
-          transition: 'all 500ms',
+          transition: 'all 500ms ease-out',
           opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(10px)'
+          transform: isInView ? 'translateY(0)' : 'translateY(20px)'
         }
-      });
+      };
+      
+      // Only apply className if the original element had one
+      if (childElement.props.className !== undefined) {
+        newProps.className = cn(
+          childElement.props.className,
+          'transition-all duration-500'
+        );
+      }
+      
+      return cloneElement(childElement, newProps);
     }
     return child;
   });

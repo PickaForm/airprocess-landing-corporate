@@ -8,8 +8,8 @@ interface InViewOptions {
 }
 
 export function useInView<T extends HTMLElement>({
-  threshold = 0.05, // Keep the lower threshold
-  rootMargin = '0px 0px -15% 0px', // Increased negative bottom margin to trigger even earlier
+  threshold = 0.05,
+  rootMargin = '0px 0px -15% 0px',
   triggerOnce = true
 }: InViewOptions = {}): [RefObject<T>, boolean] {
   const ref = useRef<T>(null);
@@ -21,6 +21,7 @@ export function useInView<T extends HTMLElement>({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // Set isInView to true when the element enters the viewport
         if (entry.isIntersecting) {
           setIsInView(true);
           if (triggerOnce) {
