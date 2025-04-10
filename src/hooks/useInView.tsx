@@ -8,47 +8,39 @@ interface InViewOptions {
 }
 
 export function useInView<T extends HTMLElement>({
-  threshold = 0.1,
-  rootMargin = '0px 0px -100px 0px',
+  threshold = 0.05, // Keep the lower threshold
+  rootMargin = '0px 0px -15% 0px', // Increased negative bottom margin to trigger even earlier
   triggerOnce = true
 }: InViewOptions = {}): [RefObject<T>, boolean] {
   const ref = useRef<T>(null);
   const [isInView, setIsInView] = useState(false);
-  
+
   useEffect(() => {
     const currentRef = ref.current;
     if (!currentRef) return;
-    
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      const [entry] = entries;
-      if (entry.isIntersecting) {
-        setIsInView(true);
-        // If triggerOnce is true, we disconnect the observer once the element is in view
-        if (triggerOnce && observer) {
-          observer.unobserve(currentRef);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          if (triggerOnce) {
+            observer.unobserve(currentRef);
+          }
+        } else if (!triggerOnce) {
+          setIsInView(false);
         }
-      } else if (!triggerOnce) {
-        setIsInView(false);
-      }
-    };
-    
-    // Create the observer with the provided options
-    const observer = new IntersectionObserver(observerCallback, {
-      threshold,
-      rootMargin
-    });
-    
-    // Start observing
+      },
+      { threshold, rootMargin }
+    );
+
     observer.observe(currentRef);
-    
-    // Clean up the observer on component unmount
+
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
-      observer.disconnect();
     };
   }, [threshold, rootMargin, triggerOnce]);
-  
+
   return [ref, isInView];
 }
