@@ -33,9 +33,6 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
           : 'opacity-0 translate-y-10',
         className
       )}
-      style={{ 
-        transitionDelay: delay > 0 ? `${delay}ms` : undefined 
-      }}
     >
       {children}
     </section>
