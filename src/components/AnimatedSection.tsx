@@ -17,8 +17,8 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   id
 }) => {
   const [ref, isInView] = useInView<HTMLDivElement>({
-    threshold: 0.05, // Lower threshold to trigger earlier
-    rootMargin: '0px 0px -15% 0px', // Increased negative margin to trigger even earlier
+    threshold: 0.05,
+    rootMargin: '0px 0px -10% 0px',
     triggerOnce: true
   });
   
@@ -34,7 +34,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
         className
       )}
       style={{ 
-        transitionDelay: `${delay}ms`
+        transitionDelay: delay > 0 ? `${delay}ms` : undefined 
       }}
     >
       {children}

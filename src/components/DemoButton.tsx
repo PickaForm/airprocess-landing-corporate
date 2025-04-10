@@ -21,7 +21,9 @@ const DemoButton: React.FC<DemoButtonProps> = ({
 
   return (
     <a
-      href="#"
+      href="https://calendly.com/pickaform/pickaform-live-demo"
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "bg-primary-light hover:bg-primary-dark text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center gap-2 px-6 py-3",
         fullWidth ? "w-full" : "inline-flex",
