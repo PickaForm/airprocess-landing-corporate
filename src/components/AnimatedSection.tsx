@@ -1,5 +1,5 @@
 
-import React, { ReactNode, Children, cloneElement, isValidElement, ReactElement } from 'react';
+import React, { ReactNode, Children, cloneElement, isValidElement, ReactElement, useState, useEffect } from 'react';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/utils';
 
@@ -25,27 +25,21 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     if (isValidElement(child)) {
       // Properly type the child element
       const childElement = child as ReactElement;
-      
-      // Create new props object
-      const newProps: any = {
+
+      // Apply animation styles directly
+      return cloneElement(childElement, {
         style: {
           ...childElement.props.style,
-          transitionDelay: `${index * 100}ms`,
-          transition: 'all 500ms ease-out',
           opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(20px)'
-        }
-      };
-      
-      // Only apply className if the original element had one
-      if (childElement.props.className !== undefined) {
-        newProps.className = cn(
-          childElement.props.className,
+          transform: isInView ? 'translateY(0)' : 'translateY(20px)',
+          transition: `opacity 500ms ease-out, transform 500ms ease-out`,
+          transitionDelay: `${index * 150}ms`,
+        },
+        className: cn(
+          childElement.props.className || '',
           'transition-all duration-500'
-        );
-      }
-      
-      return cloneElement(childElement, newProps);
+        ),
+      });
     }
     return child;
   });

@@ -19,9 +19,10 @@ export function useInView<T extends HTMLElement>({
     const currentRef = ref.current;
     if (!currentRef) return;
 
+    // Create the observer with the provided options
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Set isInView to true when the element enters the viewport
+      (entries) => {
+        const [entry] = entries;
         if (entry.isIntersecting) {
           setIsInView(true);
           if (triggerOnce) {
@@ -34,8 +35,10 @@ export function useInView<T extends HTMLElement>({
       { threshold, rootMargin }
     );
 
+    // Observe the target element
     observer.observe(currentRef);
 
+    // Clean up the observer on unmount
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
