@@ -21,28 +21,28 @@ const Index = () => {
       <main>
         <Hero />
         <ImageCarousel />
-        <AnimatedSection id="challenges">
+        <AnimatedSection id="challenges" delay={0.1}>
           <Challenges />
         </AnimatedSection>
-        <AnimatedSection id="ai-features">
+        <AnimatedSection id="ai-features" delay={0.2}>
           <AIFeatures />
         </AnimatedSection>
-        <AnimatedSection id="integration">
+        <AnimatedSection id="integration" delay={0.1}>
           <Integration />
         </AnimatedSection>
-        <AnimatedSection id="security">
+        <AnimatedSection id="security" delay={0.2}>
           <Security />
         </AnimatedSection>
-        <AnimatedSection id="pricing">
+        <AnimatedSection id="pricing" delay={0.1}>
           <PricingPlans />
         </AnimatedSection>
-        <AnimatedSection id="makers">
+        <AnimatedSection id="makers" delay={0.2}>
           <MakersSection />
         </AnimatedSection>
-        <AnimatedSection id="testimonials">
+        <AnimatedSection id="testimonials" delay={0.1}>
           <Testimonials />
         </AnimatedSection>
-        <AnimatedSection id="trusted-by">
+        <AnimatedSection id="trusted-by" delay={0.2}>
           <TrustedBy />
         </AnimatedSection>
       </main>
