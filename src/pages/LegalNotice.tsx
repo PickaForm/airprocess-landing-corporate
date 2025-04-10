@@ -11,7 +11,7 @@ const LegalNotice: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow container mx-auto py-12 px-6">
+      <main className="flex-grow container mx-auto py-12 px-6 mt-24">
         <h1 className="text-3xl font-bold mb-8">
           {language === 'fr' ? 'Mentions légales' : 'Legal Notice'}
         </h1>
