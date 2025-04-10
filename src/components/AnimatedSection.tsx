@@ -6,17 +6,19 @@ import { cn } from '@/lib/utils';
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
+  delay?: number;
   id?: string;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
   children, 
   className,
+  delay = 0,
   id
 }) => {
   const [ref, isInView] = useInView<HTMLDivElement>({
     threshold: 0.05, // Lower threshold to trigger earlier
-    rootMargin: '0px 0px -10% 0px', // Back to -10% as requested
+    rootMargin: '0px 0px -15% 0px', // Increased negative margin to trigger even earlier
     triggerOnce: true
   });
   
@@ -31,6 +33,9 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
           : 'opacity-0 translate-y-10',
         className
       )}
+      style={{ 
+        transitionDelay: `${delay}ms`
+      }}
     >
       {children}
     </section>
