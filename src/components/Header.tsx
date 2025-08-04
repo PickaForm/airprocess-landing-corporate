@@ -63,8 +63,8 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/30d100fd-66c9-4395-abc8-235de7e12e76.png" 
-              alt="Pickaform Logo" 
+              src="/lovable-uploads/79e931c5-1eab-4ae1-a162-f880bde00374.png" 
+              alt="AirProcess Logo" 
               className="w-[256px] h-[60px] object-contain" 
             />
           </Link>
