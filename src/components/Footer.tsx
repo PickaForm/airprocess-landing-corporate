@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               {getTranslation('footer.description', language)}
             </p>
             <div className="space-x-4">
-              <a href="https://www.linkedin.com/company/airprocess-cloud/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/airprocess" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin className="h-6 w-6 inline-block" />
               </a>
