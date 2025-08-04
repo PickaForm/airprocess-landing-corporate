@@ -200,8 +200,8 @@ export const translations: {
   },
   
   'hero.title': {
-    fr: 'Pickaform : le no-code conçu pour les grands comptes',
-    en: 'Pickaform: no-code designed for enterprise'
+    fr: 'AirProcess : le no-code conçu pour les grands comptes',
+    en: 'AirProcess: no-code designed for enterprise'
   },
   'hero.subtitle': {
     fr: '25 ans d\'expertise en optimisation des process métiers condensée en un outil puissant et intuitif. Automatisez, systématisez et optimisez la gestion de vos processus.',
@@ -295,13 +295,13 @@ export const translations: {
     en: 'Visuals'
   },
   'aiFeatures.intelligence.possibilities': {
-    fr: 'Les possibilités sont infinies ! Notre assistant IA est là pour vous aider, en temps réel, à maximiser l\'usage de Pickaform !',
-    en: 'The possibilities are endless! Our AI assistant is here to help you, in real time, to maximize the use of Pickaform!'
+    fr: 'Les possibilités sont infinies ! Notre assistant IA est là pour vous aider, en temps réel, à maximiser l\'usage d\'AirProcess !',
+    en: 'The possibilities are endless! Our AI assistant is here to help you, in real time, to maximize the use of AirProcess!'
   },
   
   'aiFeatures.question.title': {
-    fr: 'Une question sur Pickaform ?',
-    en: 'A question about Pickaform?'
+    fr: 'Une question sur AirProcess ?',
+    en: 'A question about AirProcess?'
   },
   'aiFeatures.question.description': {
     fr: 'Ne restez pas bloqué ! Notre assistant IA répond à toutes vos questions et vous guide étape par étape pour exploiter pleinement notre outil.',
@@ -398,24 +398,24 @@ export const translations: {
   },
   
   'integration.title': {
-    fr: 'Boostez votre stack no-code : Pickaform est compatible avec Make !',
-    en: 'Boost your no-code stack: Pickaform is compatible with Make!'
+    fr: 'Boostez votre stack no-code : AirProcess est compatible avec Make !',
+    en: 'Boost your no-code stack: AirProcess is compatible with Make!'
   },
   'integration.subtitle': {
-    fr: 'Intégrez Pickaform à votre stack no-code en quelques clics. Créez des solutions sur mesure pour répondre aux défis complexes du monde corporate.',
-    en: 'Integrate Pickaform into your no-code stack in a few clicks. Create custom solutions to address the complex challenges of the corporate world.'
+    fr: 'Intégrez AirProcess à votre stack no-code en quelques clics. Créez des solutions sur mesure pour répondre aux défis complexes du monde corporate.',
+    en: 'Integrate AirProcess into your no-code stack in a few clicks. Create custom solutions to address the complex challenges of the corporate world.'
   },
   'integration.connect.title': {
     fr: 'Connectez vos outils préférés',
     en: 'Connect your favorite tools'
   },
   'integration.connect.subtitle': {
-    fr: 'Grâce à l\'intégration avec Make, Pickaform peut communiquer avec plus de 2000 applications et services. Automatisez des flux de travail complexes sans écrire une seule ligne de code.',
-    en: 'Thanks to integration with Make, Pickaform can communicate with more than 2000 applications and services. Automate complex workflows without writing a single line of code.'
+    fr: 'Grâce à l\'intégration avec Make, AirProcess peut communiquer avec plus de 2000 applications et services. Automatisez des flux de travail complexes sans écrire une seule ligne de code.',
+    en: 'Thanks to integration with Make, AirProcess can communicate with more than 2000 applications and services. Automate complex workflows without writing a single line of code.'
   },
   'integration.feature1': {
-    fr: 'Connectez Pickaform avec vos outils existants',
-    en: 'Connect Pickaform with your existing tools'
+    fr: 'Connectez AirProcess avec vos outils existants',
+    en: 'Connect AirProcess with your existing tools'
   },
   'integration.feature2': {
     fr: 'Automatisez des processus entre plusieurs plateformes',
@@ -435,8 +435,8 @@ export const translations: {
     en: 'No-code: a nightmare for CIOs?'
   },
   'security.subtitle': {
-    fr: 'Le no-code peut être un casse-tête pour les DSI… mais avec Pickaform, les données restent sous contrôle.',
-    en: 'No-code can be a headache for CIOs... but with Pickaform, data remains under control.'
+    fr: 'Le no-code peut être un casse-tête pour les DSI… mais avec AirProcess, les données restent sous contrôle.',
+    en: 'No-code can be a headache for CIOs... but with AirProcess, data remains under control.'
   },
   'security.feature1.title': {
     fr: 'Solution On-Premise pour les grands comptes',
@@ -471,8 +471,8 @@ export const translations: {
     en: 'Meet the strictest regulatory requirements in your industry.'
   },
   'security.conclusion': {
-    fr: 'Pickaform offre une combinaison parfaite pour répondre aux exigences les plus strictes des DSI.',
-    en: 'Pickaform offers a perfect combination to meet the strictest requirements of CIOs.'
+    fr: 'AirProcess offre une combinaison parfaite pour répondre aux exigences les plus strictes des DSI.',
+    en: 'AirProcess offers a perfect combination to meet the strictest requirements of CIOs.'
   },
   'security.callToAction': {
     fr: 'Sécurisez votre transformation digitale dès maintenant !',
@@ -556,16 +556,16 @@ export const translations: {
     en: '100 GB Storage'
   },
   'pricing.volume.info': {
-    fr: 'Nous proposons des offres au-delà de 100 utilisateurs et à des tarifs dégressifs jusqu\'à 0,6€ après 5000 utilisateurs. Nous contacter à contact@pickaform.com',
-    en: 'We offer packages beyond 100 users with decreasing rates down to €0.6 after 5000 users. Contact us at contact@pickaform.com'
+    fr: 'Nous proposons des offres au-delà de 100 utilisateurs et à des tarifs dégressifs jusqu\'à 0,6€ après 5000 utilisateurs. Nous contacter à contact@airprocess.com',
+    en: 'We offer packages beyond 100 users with decreasing rates down to €0.6 after 5000 users. Contact us at contact@airprocess.com'
   },
   'pricing.onpremise.title': {
     fr: 'Solution Entreprise',
     en: 'Enterprise Solution'
   },
   'pricing.onpremise.subtitle': {
-    fr: 'Déployez Pickaform dans votre infrastructure pour un contrôle total',
-    en: 'Deploy Pickaform in your infrastructure for total control'
+    fr: 'Déployez AirProcess dans votre infrastructure pour un contrôle total',
+    en: 'Deploy AirProcess in your infrastructure for total control'
   },
   'pricing.onpremise.feature1': {
     fr: 'Sécurité et conformité maximales',
@@ -642,12 +642,12 @@ export const translations: {
     en: 'Customer testimonials'
   },
   'testimonials.subtitle': {
-    fr: 'Nos clients l\'ont adopté… découvrez pourquoi ils font confiance à Pickaform !',
-    en: 'Our customers have adopted it... find out why they trust Pickaform!'
+    fr: 'Nos clients l\'ont adopté… découvrez pourquoi ils font confiance à AirProcess !',
+    en: 'Our customers have adopted it... find out why they trust AirProcess!'
   },
   'testimonials.user1.text': {
-    fr: 'Pickaform nous a permis de digitaliser nos processus d\'approbation en un temps record. Ce qui prenait auparavant des semaines ne prend plus que quelques minutes. L\'interface est intuitive même pour nos collaborateurs les moins techniques.',
-    en: 'Pickaform allowed us to digitize our approval processes in record time. What previously took weeks now takes only a few minutes. The interface is intuitive even for our least technical employees.'
+    fr: 'AirProcess nous a permis de digitaliser nos processus d\'approbation en un temps record. Ce qui prenait auparavant des semaines ne prend plus que quelques minutes. L\'interface est intuitive même pour nos collaborateurs les moins techniques.',
+    en: 'AirProcess allowed us to digitize our approval processes in record time. What previously took weeks now takes only a few minutes. The interface is intuitive even for our least technical employees.'
   },
   'testimonials.user1.name': {
     fr: 'Sophie Laurent',
@@ -662,8 +662,8 @@ export const translations: {
     en: 'Finance Plus'
   },
   'testimonials.user2.text': {
-    fr: 'En tant que DSI, la sécurité est ma priorité absolue. Pickaform est la seule solution no-code qui a répondu à toutes nos exigences en matière de contrôle d\'accès et de gestion des données. L\'option on-premise est un vrai plus.',
-    en: 'As a CIO, security is my top priority. Pickaform is the only no-code solution that met all our requirements for access control and data management. The on-premise option is a real plus.'
+    fr: 'En tant que DSI, la sécurité est ma priorité absolue. AirProcess est la seule solution no-code qui a répondu à toutes nos exigences en matière de contrôle d\'accès et de gestion des données. L\'option on-premise est un vrai plus.',
+    en: 'As a CIO, security is my top priority. AirProcess is the only no-code solution that met all our requirements for access control and data management. The on-premise option is a real plus.'
   },
   'testimonials.user2.name': {
     fr: 'Thomas Moreau',
@@ -678,8 +678,8 @@ export const translations: {
     en: 'GroupeSoft'
   },
   'testimonials.user3.text': {
-    fr: 'J\'ai créé plus de 15 applications avec Pickaform en seulement quelques mois. L\'outil est incroyablement flexible et la nouvelle fonctionnalité IA nous a fait gagner un temps considérable dans la conception et le développement.',
-    en: 'I created more than 15 applications with Pickaform in just a few months. The tool is incredibly flexible and the new AI feature has saved us considerable time in design and development.'
+    fr: 'J\'ai créé plus de 15 applications avec AirProcess en seulement quelques mois. L\'outil est incroyablement flexible et la nouvelle fonctionnalité IA nous a fait gagner un temps considérable dans la conception et le développement.',
+    en: 'I created more than 15 applications with AirProcess in just a few months. The tool is incredibly flexible and the new AI feature has saved us considerable time in design and development.'
   },
   'testimonials.user3.name': {
     fr: 'Marie Dubois',
@@ -752,8 +752,8 @@ export const translations: {
     en: 'Contact us'
   },
   'footer.contactText': {
-    fr: 'Vous souhaitez en savoir plus sur Pickaform ? N\'hésitez pas à prendre contact avec notre équipe.',
-    en: 'Want to know more about Pickaform? Feel free to contact our team.'
+    fr: 'Vous souhaitez en savoir plus sur AirProcess ? N\'hésitez pas à prendre contact avec notre équipe.',
+    en: 'Want to know more about AirProcess? Feel free to contact our team.'
   },
   'footer.copyright': {
     fr: 'Tous droits réservés.',

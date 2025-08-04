@@ -21,7 +21,7 @@ const DemoButton: React.FC<DemoButtonProps> = ({
 
   return (
     <a
-      href="https://calendly.com/pickaform/pickaform-live-demo"
+      href="https://calendly.com/airprocess/airprocess-live-demo"
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
