@@ -100,6 +100,15 @@ const Header: React.FC = () => {
             {getTranslation('header.integration', language)}
           </button>
           <button 
+            onClick={() => handleSectionNavigation('security')}
+            className={cn(
+              "font-medium transition-colors",
+              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
+            )}
+          >
+            {getTranslation('header.security', language)}
+          </button>
+          <button 
             onClick={() => handleSectionNavigation('pricing')}
             className={cn(
               "font-medium transition-colors",
@@ -116,15 +125,6 @@ const Header: React.FC = () => {
             )}
           >
             {getTranslation('header.makers', language)}
-          </button>
-          <button 
-            onClick={() => handleSectionNavigation('security')}
-            className={cn(
-              "font-medium transition-colors",
-              isScrolled ? "text-gray-700 hover:text-primary-light" : "text-gray-100 hover:text-white"
-            )}
-          >
-            {getTranslation('header.security', language)}
           </button>
           <button 
             onClick={() => handleSectionNavigation('testimonials')}
@@ -176,6 +176,12 @@ const Header: React.FC = () => {
               {getTranslation('header.integration', language)}
             </button>
             <button 
+              onClick={() => handleSectionNavigation('security')}
+              className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
+            >
+              {getTranslation('header.security', language)}
+            </button>
+            <button 
               onClick={() => handleSectionNavigation('pricing')}
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
             >
@@ -186,12 +192,6 @@ const Header: React.FC = () => {
               className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
             >
               {getTranslation('header.makers', language)}
-            </button>
-            <button 
-              onClick={() => handleSectionNavigation('security')}
-              className="text-gray-700 hover:text-primary-light font-medium py-2 transition-colors"
-            >
-              {getTranslation('header.security', language)}
             </button>
             <button 
               onClick={() => handleSectionNavigation('testimonials')}
