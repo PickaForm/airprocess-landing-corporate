@@ -508,8 +508,8 @@ export const translations: {
     en: '€15.00'
   },
   'pricing.gold.price': {
-    fr: '12,50€',
-    en: '€12.50'
+    fr: '13,00€',
+    en: '€13.00'
   },
   'pricing.platinum.price': {
     fr: '11,00€',
