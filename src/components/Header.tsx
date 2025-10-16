@@ -65,7 +65,7 @@ const Header: React.FC = () => {
             <img 
               src="/lovable-uploads/airprocess-logo.webp" 
               alt="AirProcess Logo" 
-              className="h-[60px] w-auto object-contain"
+              className="w-[256px] h-[60px] object-contain" 
             />
           </Link>
         </div>
